@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        GenieAPI.apiToken = "VvsOR2dF8gfD3NXzHDIyx4VJU5VUOLIx"
+        GenieAPI.apiToken = "YOUR_TOKEN"
         Customization.boldFontName = "GreycliffCF-Bold"
         Customization.lightFontName = "GreycliffCF-Light"
         Customization.regularFontName = "GreycliffCF-Regular"
