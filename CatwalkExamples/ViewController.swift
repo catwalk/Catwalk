@@ -58,7 +58,7 @@ class ViewController: UIViewController {
         @objc func openFocusedGenieState() {
             let context = CTWAssistantContext()
             context.delegate = self
-            context.focusedSKU = "2512084"
+            context.focusedSKU = "YOUR_SKU"
             context.hostViewController = self
             context.presentAssistant()
         }
