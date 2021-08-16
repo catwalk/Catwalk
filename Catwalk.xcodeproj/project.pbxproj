@@ -3,13 +3,56 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		1D95027A26C9D4C800EC7AB1 /* Catwalk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D95027026C9D4C700EC7AB1 /* Catwalk.framework */; };
 		1D95027F26C9D4C800EC7AB1 /* CatwalkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D95027E26C9D4C800EC7AB1 /* CatwalkTests.swift */; };
 		1D95028126C9D4C800EC7AB1 /* Catwalk.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D95027326C9D4C700EC7AB1 /* Catwalk.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1DDAA57726C9E5F300104FBD /* genieBack.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DDAA57626C9E5F300104FBD /* genieBack.png */; };
+		1DDAA57926C9E5FF00104FBD /* genieClose.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DDAA57826C9E5FF00104FBD /* genieClose.png */; };
+		1DDAA57B26C9E60600104FBD /* genieInfo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DDAA57A26C9E60600104FBD /* genieInfo.png */; };
+		1DDAA57D26C9E60F00104FBD /* genieLike.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DDAA57C26C9E60F00104FBD /* genieLike.png */; };
+		1DDAA57F26C9E61500104FBD /* genieRemove.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DDAA57E26C9E61500104FBD /* genieRemove.png */; };
+		1DDAA58726C9E6DF00104FBD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDAA58626C9E6DF00104FBD /* AppDelegate.swift */; };
+		1DDAA58926C9E6DF00104FBD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDAA58826C9E6DF00104FBD /* SceneDelegate.swift */; };
+		1DDAA58B26C9E6DF00104FBD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDAA58A26C9E6DF00104FBD /* ViewController.swift */; };
+		1DDAA59026C9E6E300104FBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DDAA58F26C9E6E200104FBD /* Assets.xcassets */; };
+		1DDAA59326C9E6E300104FBD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DDAA59126C9E6E300104FBD /* LaunchScreen.storyboard */; };
+		1DDAA59A26C9E93A00104FBD /* CTWAssistantContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDAA59926C9E93A00104FBD /* CTWAssistantContext.swift */; };
+		1DDAA59D26C9E98100104FBD /* CTWGenieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDAA59C26C9E98100104FBD /* CTWGenieViewController.swift */; };
+		1DDAA59F26C9ECE200104FBD /* CTWGenieChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDAA59E26C9ECE200104FBD /* CTWGenieChatViewController.swift */; };
+		1DDAA5A126C9ECF000104FBD /* CTWGenieContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDAA5A026C9ECF000104FBD /* CTWGenieContainerViewController.swift */; };
+		1DDAA5A326C9ED0900104FBD /* CTWGenieCreateLookColorOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDAA5A226C9ED0900104FBD /* CTWGenieCreateLookColorOptionsViewController.swift */; };
+		1DDAA5A526C9ED1200104FBD /* CTWGenieCreateLookGlobalOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDAA5A426C9ED1200104FBD /* CTWGenieCreateLookGlobalOptionsViewController.swift */; };
+		1DDAA5A726C9ED1C00104FBD /* CTWGenieLooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDAA5A626C9ED1C00104FBD /* CTWGenieLooksViewController.swift */; };
+		1DDAA5A926C9ED2600104FBD /* CTWGenieShoppingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDAA5A826C9ED2600104FBD /* CTWGenieShoppingListViewController.swift */; };
+		1DDAA5AB26C9ED3400104FBD /* CTWOfflineStateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDAA5AA26C9ED3400104FBD /* CTWOfflineStateViewController.swift */; };
+		1DDAA5AE26C9EDD200104FBD /* UIButtonExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDAA5AD26C9EDD200104FBD /* UIButtonExtensions.swift */; };
+		1DDAA5B026C9EDE000104FBD /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDAA5AF26C9EDE000104FBD /* UIColorExtensions.swift */; };
+		1DDAA5B226C9EE2200104FBD /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDAA5B126C9EE2200104FBD /* UIViewExtensions.swift */; };
+		1DDAA5B426C9EE6000104FBD /* CTWChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDAA5B326C9EE6000104FBD /* CTWChatMessage.swift */; };
+		1DDAA5B726C9EE8000104FBD /* CTWClothing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDAA5B626C9EE8000104FBD /* CTWClothing.swift */; };
+		1DDAA5B926C9EE8900104FBD /* CTWDefaultResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDAA5B826C9EE8900104FBD /* CTWDefaultResponse.swift */; };
+		1DDAA5BB26C9EE9100104FBD /* CTWLook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDAA5BA26C9EE9100104FBD /* CTWLook.swift */; };
+		1DDAA5BD26C9EE9B00104FBD /* CTWSKUAvailability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDAA5BC26C9EE9B00104FBD /* CTWSKUAvailability.swift */; };
+		1DDAA5C026C9EEE100104FBD /* CTWNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDAA5BF26C9EEE100104FBD /* CTWNetworkManager.swift */; };
+		1DDAA5CC26C9EF3D00104FBD /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDAA5CB26C9EF3D00104FBD /* Config.swift */; };
+		1DDAA5CE26C9EF4700104FBD /* CTWAppUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDAA5CD26C9EF4700104FBD /* CTWAppUtils.swift */; };
+		1DDAA5D126C9EF6F00104FBD /* CTWGenieLooksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDAA5D026C9EF6F00104FBD /* CTWGenieLooksViewModel.swift */; };
+		1DDAA5D326C9EF7900104FBD /* CTWShoppingClothingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDAA5D226C9EF7900104FBD /* CTWShoppingClothingViewModel.swift */; };
+		1DDAA5D726C9EFBB00104FBD /* CTWLookContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDAA5D626C9EFBB00104FBD /* CTWLookContainerView.swift */; };
+		1DDAA5D926C9EFC400104FBD /* CTWChatAssistantMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDAA5D826C9EFC400104FBD /* CTWChatAssistantMessageTableViewCell.swift */; };
+		1DDAA5DB26C9EFCC00104FBD /* CTWChatUserMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDAA5DA26C9EFCC00104FBD /* CTWChatUserMessageTableViewCell.swift */; };
+		1DDAA5DD26C9EFD400104FBD /* CTWLookCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDAA5DC26C9EFD400104FBD /* CTWLookCollectionViewCell.swift */; };
+		1DDAA5DF26C9EFDC00104FBD /* CTWShoppingClothingItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDAA5DE26C9EFDC00104FBD /* CTWShoppingClothingItemTableViewCell.swift */; };
+		1DDAA5E226C9F0B300104FBD /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 1DDAA5E126C9F0B300104FBD /* SDWebImage */; };
+		1DDAA5E726C9F1B300104FBD /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 1DDAA5E626C9F1B300104FBD /* SDWebImage */; };
+		1DDAA5EA26CA95D900104FBD /* GreycliffCF-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1DDAA5C526C9EF1E00104FBD /* GreycliffCF-Bold.ttf */; };
+		1DDAA5EB26CA95DD00104FBD /* Greycliff-CF-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1DDAA5C426C9EF1D00104FBD /* Greycliff-CF-Light.ttf */; };
+		1DDAA5EC26CA95E100104FBD /* Greycliff-CF-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1DDAA5C326C9EF1D00104FBD /* Greycliff-CF-Regular.ttf */; };
+		1DDAA5ED26CA95E400104FBD /* Greycliff-CF-RegularOblique.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1DDAA5C226C9EF1D00104FBD /* Greycliff-CF-RegularOblique.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +72,49 @@
 		1D95027926C9D4C800EC7AB1 /* CatwalkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CatwalkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D95027E26C9D4C800EC7AB1 /* CatwalkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatwalkTests.swift; sourceTree = "<group>"; };
 		1D95028026C9D4C800EC7AB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1DDAA57626C9E5F300104FBD /* genieBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = genieBack.png; sourceTree = "<group>"; };
+		1DDAA57826C9E5FF00104FBD /* genieClose.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = genieClose.png; sourceTree = "<group>"; };
+		1DDAA57A26C9E60600104FBD /* genieInfo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = genieInfo.png; sourceTree = "<group>"; };
+		1DDAA57C26C9E60F00104FBD /* genieLike.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = genieLike.png; sourceTree = "<group>"; };
+		1DDAA57E26C9E61500104FBD /* genieRemove.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = genieRemove.png; sourceTree = "<group>"; };
+		1DDAA58426C9E6DF00104FBD /* CatwalkExamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatwalkExamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DDAA58626C9E6DF00104FBD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1DDAA58826C9E6DF00104FBD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		1DDAA58A26C9E6DF00104FBD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1DDAA58F26C9E6E200104FBD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1DDAA59226C9E6E300104FBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1DDAA59426C9E6E300104FBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1DDAA59926C9E93A00104FBD /* CTWAssistantContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTWAssistantContext.swift; sourceTree = "<group>"; };
+		1DDAA59C26C9E98100104FBD /* CTWGenieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTWGenieViewController.swift; sourceTree = "<group>"; };
+		1DDAA59E26C9ECE200104FBD /* CTWGenieChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTWGenieChatViewController.swift; sourceTree = "<group>"; };
+		1DDAA5A026C9ECF000104FBD /* CTWGenieContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTWGenieContainerViewController.swift; sourceTree = "<group>"; };
+		1DDAA5A226C9ED0900104FBD /* CTWGenieCreateLookColorOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTWGenieCreateLookColorOptionsViewController.swift; sourceTree = "<group>"; };
+		1DDAA5A426C9ED1200104FBD /* CTWGenieCreateLookGlobalOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTWGenieCreateLookGlobalOptionsViewController.swift; sourceTree = "<group>"; };
+		1DDAA5A626C9ED1C00104FBD /* CTWGenieLooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTWGenieLooksViewController.swift; sourceTree = "<group>"; };
+		1DDAA5A826C9ED2600104FBD /* CTWGenieShoppingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTWGenieShoppingListViewController.swift; sourceTree = "<group>"; };
+		1DDAA5AA26C9ED3400104FBD /* CTWOfflineStateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTWOfflineStateViewController.swift; sourceTree = "<group>"; };
+		1DDAA5AD26C9EDD200104FBD /* UIButtonExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtensions.swift; sourceTree = "<group>"; };
+		1DDAA5AF26C9EDE000104FBD /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
+		1DDAA5B126C9EE2200104FBD /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
+		1DDAA5B326C9EE6000104FBD /* CTWChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTWChatMessage.swift; sourceTree = "<group>"; };
+		1DDAA5B626C9EE8000104FBD /* CTWClothing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTWClothing.swift; sourceTree = "<group>"; };
+		1DDAA5B826C9EE8900104FBD /* CTWDefaultResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTWDefaultResponse.swift; sourceTree = "<group>"; };
+		1DDAA5BA26C9EE9100104FBD /* CTWLook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTWLook.swift; sourceTree = "<group>"; };
+		1DDAA5BC26C9EE9B00104FBD /* CTWSKUAvailability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTWSKUAvailability.swift; sourceTree = "<group>"; };
+		1DDAA5BF26C9EEE100104FBD /* CTWNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTWNetworkManager.swift; sourceTree = "<group>"; };
+		1DDAA5C226C9EF1D00104FBD /* Greycliff-CF-RegularOblique.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Greycliff-CF-RegularOblique.ttf"; sourceTree = "<group>"; };
+		1DDAA5C326C9EF1D00104FBD /* Greycliff-CF-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Greycliff-CF-Regular.ttf"; sourceTree = "<group>"; };
+		1DDAA5C426C9EF1D00104FBD /* Greycliff-CF-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Greycliff-CF-Light.ttf"; sourceTree = "<group>"; };
+		1DDAA5C526C9EF1E00104FBD /* GreycliffCF-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GreycliffCF-Bold.ttf"; sourceTree = "<group>"; };
+		1DDAA5CB26C9EF3D00104FBD /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		1DDAA5CD26C9EF4700104FBD /* CTWAppUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTWAppUtils.swift; sourceTree = "<group>"; };
+		1DDAA5D026C9EF6F00104FBD /* CTWGenieLooksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTWGenieLooksViewModel.swift; sourceTree = "<group>"; };
+		1DDAA5D226C9EF7900104FBD /* CTWShoppingClothingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTWShoppingClothingViewModel.swift; sourceTree = "<group>"; };
+		1DDAA5D626C9EFBB00104FBD /* CTWLookContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTWLookContainerView.swift; sourceTree = "<group>"; };
+		1DDAA5D826C9EFC400104FBD /* CTWChatAssistantMessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTWChatAssistantMessageTableViewCell.swift; sourceTree = "<group>"; };
+		1DDAA5DA26C9EFCC00104FBD /* CTWChatUserMessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTWChatUserMessageTableViewCell.swift; sourceTree = "<group>"; };
+		1DDAA5DC26C9EFD400104FBD /* CTWLookCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTWLookCollectionViewCell.swift; sourceTree = "<group>"; };
+		1DDAA5DE26C9EFDC00104FBD /* CTWShoppingClothingItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTWShoppingClothingItemTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DDAA5E226C9F0B300104FBD /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,6 +134,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1DDAA58126C9E6DF00104FBD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1DDAA5E726C9F1B300104FBD /* SDWebImage in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -55,7 +150,9 @@
 			children = (
 				1D95027226C9D4C700EC7AB1 /* Catwalk */,
 				1D95027D26C9D4C800EC7AB1 /* CatwalkTests */,
+				1DDAA58526C9E6DF00104FBD /* CatwalkExamples */,
 				1D95027126C9D4C700EC7AB1 /* Products */,
+				1DDAA5E326C9F16700104FBD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +161,7 @@
 			children = (
 				1D95027026C9D4C700EC7AB1 /* Catwalk.framework */,
 				1D95027926C9D4C800EC7AB1 /* CatwalkTests.xctest */,
+				1DDAA58426C9E6DF00104FBD /* CatwalkExamples.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -71,6 +169,15 @@
 		1D95027226C9D4C700EC7AB1 /* Catwalk */ = {
 			isa = PBXGroup;
 			children = (
+				1DDAA5D426C9EFAB00104FBD /* Views */,
+				1DDAA5CF26C9EF5D00104FBD /* ViewModels */,
+				1DDAA5CA26C9EF3400104FBD /* Utils */,
+				1DDAA5BE26C9EEC500104FBD /* Networking */,
+				1DDAA5B526C9EE6C00104FBD /* Models */,
+				1DDAA5AC26C9EDB900104FBD /* Extensions */,
+				1DDAA59B26C9E95E00104FBD /* Controllers */,
+				1DDAA59826C9E8C400104FBD /* Config */,
+				1DDAA57526C9E5D400104FBD /* Resources */,
 				1D95027326C9D4C700EC7AB1 /* Catwalk.h */,
 				1D95027426C9D4C700EC7AB1 /* Info.plist */,
 			);
@@ -84,6 +191,141 @@
 				1D95028026C9D4C800EC7AB1 /* Info.plist */,
 			);
 			path = CatwalkTests;
+			sourceTree = "<group>";
+		};
+		1DDAA57526C9E5D400104FBD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1DDAA57626C9E5F300104FBD /* genieBack.png */,
+				1DDAA57826C9E5FF00104FBD /* genieClose.png */,
+				1DDAA57A26C9E60600104FBD /* genieInfo.png */,
+				1DDAA57C26C9E60F00104FBD /* genieLike.png */,
+				1DDAA57E26C9E61500104FBD /* genieRemove.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		1DDAA58526C9E6DF00104FBD /* CatwalkExamples */ = {
+			isa = PBXGroup;
+			children = (
+				1DDAA58626C9E6DF00104FBD /* AppDelegate.swift */,
+				1DDAA58826C9E6DF00104FBD /* SceneDelegate.swift */,
+				1DDAA58A26C9E6DF00104FBD /* ViewController.swift */,
+				1DDAA5C126C9EF1000104FBD /* Fonts */,
+				1DDAA58F26C9E6E200104FBD /* Assets.xcassets */,
+				1DDAA59126C9E6E300104FBD /* LaunchScreen.storyboard */,
+				1DDAA59426C9E6E300104FBD /* Info.plist */,
+			);
+			path = CatwalkExamples;
+			sourceTree = "<group>";
+		};
+		1DDAA59826C9E8C400104FBD /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				1DDAA5CB26C9EF3D00104FBD /* Config.swift */,
+				1DDAA59926C9E93A00104FBD /* CTWAssistantContext.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		1DDAA59B26C9E95E00104FBD /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1DDAA59C26C9E98100104FBD /* CTWGenieViewController.swift */,
+				1DDAA59E26C9ECE200104FBD /* CTWGenieChatViewController.swift */,
+				1DDAA5A026C9ECF000104FBD /* CTWGenieContainerViewController.swift */,
+				1DDAA5A226C9ED0900104FBD /* CTWGenieCreateLookColorOptionsViewController.swift */,
+				1DDAA5A426C9ED1200104FBD /* CTWGenieCreateLookGlobalOptionsViewController.swift */,
+				1DDAA5A626C9ED1C00104FBD /* CTWGenieLooksViewController.swift */,
+				1DDAA5A826C9ED2600104FBD /* CTWGenieShoppingListViewController.swift */,
+				1DDAA5AA26C9ED3400104FBD /* CTWOfflineStateViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		1DDAA5AC26C9EDB900104FBD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1DDAA5AD26C9EDD200104FBD /* UIButtonExtensions.swift */,
+				1DDAA5AF26C9EDE000104FBD /* UIColorExtensions.swift */,
+				1DDAA5B126C9EE2200104FBD /* UIViewExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		1DDAA5B526C9EE6C00104FBD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1DDAA5B326C9EE6000104FBD /* CTWChatMessage.swift */,
+				1DDAA5B626C9EE8000104FBD /* CTWClothing.swift */,
+				1DDAA5B826C9EE8900104FBD /* CTWDefaultResponse.swift */,
+				1DDAA5BA26C9EE9100104FBD /* CTWLook.swift */,
+				1DDAA5BC26C9EE9B00104FBD /* CTWSKUAvailability.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1DDAA5BE26C9EEC500104FBD /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				1DDAA5BF26C9EEE100104FBD /* CTWNetworkManager.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		1DDAA5C126C9EF1000104FBD /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				1DDAA5C526C9EF1E00104FBD /* GreycliffCF-Bold.ttf */,
+				1DDAA5C426C9EF1D00104FBD /* Greycliff-CF-Light.ttf */,
+				1DDAA5C326C9EF1D00104FBD /* Greycliff-CF-Regular.ttf */,
+				1DDAA5C226C9EF1D00104FBD /* Greycliff-CF-RegularOblique.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		1DDAA5CA26C9EF3400104FBD /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				1DDAA5CD26C9EF4700104FBD /* CTWAppUtils.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		1DDAA5CF26C9EF5D00104FBD /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				1DDAA5D026C9EF6F00104FBD /* CTWGenieLooksViewModel.swift */,
+				1DDAA5D226C9EF7900104FBD /* CTWShoppingClothingViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		1DDAA5D426C9EFAB00104FBD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1DDAA5D526C9EFB100104FBD /* Cells */,
+				1DDAA5D626C9EFBB00104FBD /* CTWLookContainerView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1DDAA5D526C9EFB100104FBD /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				1DDAA5D826C9EFC400104FBD /* CTWChatAssistantMessageTableViewCell.swift */,
+				1DDAA5DA26C9EFCC00104FBD /* CTWChatUserMessageTableViewCell.swift */,
+				1DDAA5DC26C9EFD400104FBD /* CTWLookCollectionViewCell.swift */,
+				1DDAA5DE26C9EFDC00104FBD /* CTWShoppingClothingItemTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		1DDAA5E326C9F16700104FBD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -114,6 +356,9 @@
 			dependencies = (
 			);
 			name = Catwalk;
+			packageProductDependencies = (
+				1DDAA5E126C9F0B300104FBD /* SDWebImage */,
+			);
 			productName = Catwalk;
 			productReference = 1D95027026C9D4C700EC7AB1 /* Catwalk.framework */;
 			productType = "com.apple.product-type.framework";
@@ -136,6 +381,26 @@
 			productReference = 1D95027926C9D4C800EC7AB1 /* CatwalkTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		1DDAA58326C9E6DF00104FBD /* CatwalkExamples */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DDAA59526C9E6E300104FBD /* Build configuration list for PBXNativeTarget "CatwalkExamples" */;
+			buildPhases = (
+				1DDAA58026C9E6DF00104FBD /* Sources */,
+				1DDAA58126C9E6DF00104FBD /* Frameworks */,
+				1DDAA58226C9E6DF00104FBD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CatwalkExamples;
+			packageProductDependencies = (
+				1DDAA5E626C9F1B300104FBD /* SDWebImage */,
+			);
+			productName = CatwalkExamples;
+			productReference = 1DDAA58426C9E6DF00104FBD /* CatwalkExamples.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -148,8 +413,12 @@
 				TargetAttributes = {
 					1D95026F26C9D4C700EC7AB1 = {
 						CreatedOnToolsVersion = 11.6;
+						LastSwiftMigration = 1160;
 					};
 					1D95027826C9D4C800EC7AB1 = {
+						CreatedOnToolsVersion = 11.6;
+					};
+					1DDAA58326C9E6DF00104FBD = {
 						CreatedOnToolsVersion = 11.6;
 					};
 				};
@@ -163,12 +432,16 @@
 				Base,
 			);
 			mainGroup = 1D95026626C9D4C700EC7AB1;
+			packageReferences = (
+				1DDAA5E026C9F0B300104FBD /* XCRemoteSwiftPackageReference "SDWebImage" */,
+			);
 			productRefGroup = 1D95027126C9D4C700EC7AB1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				1D95026F26C9D4C700EC7AB1 /* Catwalk */,
 				1D95027826C9D4C800EC7AB1 /* CatwalkTests */,
+				1DDAA58326C9E6DF00104FBD /* CatwalkExamples */,
 			);
 		};
 /* End PBXProject section */
@@ -178,6 +451,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DDAA57D26C9E60F00104FBD /* genieLike.png in Resources */,
+				1DDAA57B26C9E60600104FBD /* genieInfo.png in Resources */,
+				1DDAA57F26C9E61500104FBD /* genieRemove.png in Resources */,
+				1DDAA57926C9E5FF00104FBD /* genieClose.png in Resources */,
+				1DDAA57726C9E5F300104FBD /* genieBack.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,6 +466,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1DDAA58226C9E6DF00104FBD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1DDAA5EC26CA95E100104FBD /* Greycliff-CF-Regular.ttf in Resources */,
+				1DDAA5EB26CA95DD00104FBD /* Greycliff-CF-Light.ttf in Resources */,
+				1DDAA59326C9E6E300104FBD /* LaunchScreen.storyboard in Resources */,
+				1DDAA59026C9E6E300104FBD /* Assets.xcassets in Resources */,
+				1DDAA5ED26CA95E400104FBD /* Greycliff-CF-RegularOblique.ttf in Resources */,
+				1DDAA5EA26CA95D900104FBD /* GreycliffCF-Bold.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -195,6 +486,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DDAA5A126C9ECF000104FBD /* CTWGenieContainerViewController.swift in Sources */,
+				1DDAA5D126C9EF6F00104FBD /* CTWGenieLooksViewModel.swift in Sources */,
+				1DDAA5BD26C9EE9B00104FBD /* CTWSKUAvailability.swift in Sources */,
+				1DDAA5B026C9EDE000104FBD /* UIColorExtensions.swift in Sources */,
+				1DDAA5B726C9EE8000104FBD /* CTWClothing.swift in Sources */,
+				1DDAA5CE26C9EF4700104FBD /* CTWAppUtils.swift in Sources */,
+				1DDAA5CC26C9EF3D00104FBD /* Config.swift in Sources */,
+				1DDAA5DB26C9EFCC00104FBD /* CTWChatUserMessageTableViewCell.swift in Sources */,
+				1DDAA5B426C9EE6000104FBD /* CTWChatMessage.swift in Sources */,
+				1DDAA59D26C9E98100104FBD /* CTWGenieViewController.swift in Sources */,
+				1DDAA59F26C9ECE200104FBD /* CTWGenieChatViewController.swift in Sources */,
+				1DDAA5B926C9EE8900104FBD /* CTWDefaultResponse.swift in Sources */,
+				1DDAA59A26C9E93A00104FBD /* CTWAssistantContext.swift in Sources */,
+				1DDAA5A926C9ED2600104FBD /* CTWGenieShoppingListViewController.swift in Sources */,
+				1DDAA5D926C9EFC400104FBD /* CTWChatAssistantMessageTableViewCell.swift in Sources */,
+				1DDAA5AE26C9EDD200104FBD /* UIButtonExtensions.swift in Sources */,
+				1DDAA5A326C9ED0900104FBD /* CTWGenieCreateLookColorOptionsViewController.swift in Sources */,
+				1DDAA5BB26C9EE9100104FBD /* CTWLook.swift in Sources */,
+				1DDAA5A526C9ED1200104FBD /* CTWGenieCreateLookGlobalOptionsViewController.swift in Sources */,
+				1DDAA5D726C9EFBB00104FBD /* CTWLookContainerView.swift in Sources */,
+				1DDAA5AB26C9ED3400104FBD /* CTWOfflineStateViewController.swift in Sources */,
+				1DDAA5C026C9EEE100104FBD /* CTWNetworkManager.swift in Sources */,
+				1DDAA5D326C9EF7900104FBD /* CTWShoppingClothingViewModel.swift in Sources */,
+				1DDAA5DF26C9EFDC00104FBD /* CTWShoppingClothingItemTableViewCell.swift in Sources */,
+				1DDAA5B226C9EE2200104FBD /* UIViewExtensions.swift in Sources */,
+				1DDAA5DD26C9EFD400104FBD /* CTWLookCollectionViewCell.swift in Sources */,
+				1DDAA5A726C9ED1C00104FBD /* CTWGenieLooksViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,6 +521,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D95027F26C9D4C800EC7AB1 /* CatwalkTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1DDAA58026C9E6DF00104FBD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1DDAA58B26C9E6DF00104FBD /* ViewController.swift in Sources */,
+				1DDAA58726C9E6DF00104FBD /* AppDelegate.swift in Sources */,
+				1DDAA58926C9E6DF00104FBD /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,6 +543,17 @@
 			targetProxy = 1D95027B26C9D4C800EC7AB1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1DDAA59126C9E6E300104FBD /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1DDAA59226C9E6E300104FBD /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		1D95028226C9D4C800EC7AB1 /* Debug */ = {
@@ -342,6 +681,7 @@
 		1D95028526C9D4C800EC7AB1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = M3754J9UWF;
@@ -358,6 +698,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mycatwalk.Catwalk;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -366,6 +707,7 @@
 		1D95028626C9D4C800EC7AB1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = M3754J9UWF;
@@ -390,6 +732,7 @@
 		1D95028826C9D4C800EC7AB1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M3754J9UWF;
 				INFOPLIST_FILE = CatwalkTests/Info.plist;
@@ -408,6 +751,7 @@
 		1D95028926C9D4C800EC7AB1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M3754J9UWF;
 				INFOPLIST_FILE = CatwalkTests/Info.plist;
@@ -417,6 +761,42 @@
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mycatwalk.CatwalkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		1DDAA59626C9E6E300104FBD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M3754J9UWF;
+				INFOPLIST_FILE = CatwalkExamples/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mycatwalk.CatwalkExamples;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1DDAA59726C9E6E300104FBD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M3754J9UWF;
+				INFOPLIST_FILE = CatwalkExamples/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mycatwalk.CatwalkExamples;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -453,7 +833,40 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		1DDAA59526C9E6E300104FBD /* Build configuration list for PBXNativeTarget "CatwalkExamples" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DDAA59626C9E6E300104FBD /* Debug */,
+				1DDAA59726C9E6E300104FBD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1DDAA5E026C9F0B300104FBD /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.11.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1DDAA5E126C9F0B300104FBD /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1DDAA5E026C9F0B300104FBD /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		1DDAA5E626C9F1B300104FBD /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1DDAA5E026C9F0B300104FBD /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1D95026726C9D4C700EC7AB1 /* Project object */;
 }
