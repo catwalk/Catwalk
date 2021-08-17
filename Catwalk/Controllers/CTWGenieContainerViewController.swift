@@ -19,7 +19,8 @@ class CTWGenieContainerViewController: UIViewController {
     
     lazy var btnBack: UIButton = {
         let button = UIButton(type: .system)
-        let imageIcon = UIImage(named: "genieBack", in: Bundle(identifier: "com.mycatwalk.Catwalk"), compatibleWith: nil)?.withTintColor(Customization.menuButtonBackgroundColor, renderingMode: .alwaysOriginal)
+        let bundle = Bundle(for: CTWGenieContainerViewController.self)
+        let imageIcon = UIImage(named: "genieBack", in: bundle, with: nil)?.withTintColor(Customization.menuButtonBackgroundColor, renderingMode: .alwaysOriginal)
         button.setImage(imageIcon, for: .normal)
         button.imageEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         button.addTarget(self, action: #selector(backAction), for: .touchUpInside)
@@ -28,7 +29,8 @@ class CTWGenieContainerViewController: UIViewController {
     
     lazy var btnClose: UIButton = {
         let button = UIButton(type: .system)
-        let imageIcon = UIImage(named: "genieClose", in: Bundle(identifier: "com.mycatwalk.Catwalk"), compatibleWith: nil)?.withTintColor(Customization.menuButtonBackgroundColor, renderingMode: .alwaysOriginal)
+        let bundle = Bundle(for: CTWGenieContainerViewController.self)
+        let imageIcon = UIImage(named: "genieClose", in: bundle, with: nil)?.withTintColor(Customization.menuButtonBackgroundColor, renderingMode: .alwaysOriginal)
         button.setImage(imageIcon, for: .normal)
         button.imageEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         button.addTarget(self, action: #selector(close), for: .touchUpInside)

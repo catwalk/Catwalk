@@ -52,7 +52,8 @@ class CTWGenieLooksViewController: CTWGenieContainerViewController {
     
     lazy var btnLikeLook: UIButton = {
         let button = UIButton(type: .system)
-        let imageIcon = UIImage(named: "genieLike", in: Bundle(identifier: "com.mycatwalk.Catwalk"), compatibleWith: nil)?.withTintColor(Customization.generalButtonBackgroundColor, renderingMode: .alwaysOriginal)
+        let bundle = Bundle(for: CTWGenieLooksViewController.self)
+        let imageIcon = UIImage(named: "genieLike", in: bundle, with: nil)?.withTintColor(Customization.generalButtonBackgroundColor, renderingMode: .alwaysOriginal)
         button.setImage(imageIcon, for: .normal)
         button.addTarget(self, action: #selector(likeLook), for: .touchUpInside)
         button.setDimensions(height: 50, width: 50)

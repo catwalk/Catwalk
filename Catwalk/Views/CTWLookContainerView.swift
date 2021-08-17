@@ -21,7 +21,8 @@ class CTWLookContainerView: UIView {
     
     var infoIcon: UIButton = {
         let button = UIButton()
-        let imageIcon = UIImage(named: "genieInfo", in: Bundle(identifier: "com.mycatwalk.Catwalk"), compatibleWith: nil)?.withTintColor(.LightGrey, renderingMode: .alwaysOriginal)
+        let bundle = Bundle(for: CTWLookContainerView.self)
+        let imageIcon = UIImage(named: "genieInfo", in: bundle, with: nil)?.withTintColor(.LightGrey, renderingMode: .alwaysOriginal)
         button.setImage(imageIcon, for: .normal)
         button.imageEdgeInsets = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
         return button
