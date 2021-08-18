@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D09B82826CC4DA00040AB0D /* CTWGenieLooksViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D09B82726CC4DA00040AB0D /* CTWGenieLooksViewModelTests.swift */; };
+		1D09B82A26CC6BB40040AB0D /* CTWShoppingClothingViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D09B82926CC6BB40040AB0D /* CTWShoppingClothingViewModelTests.swift */; };
+		1D09B82C26CC87FC0040AB0D /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D09B82B26CC87FC0040AB0D /* ArrayExtensions.swift */; };
 		1D95027A26C9D4C800EC7AB1 /* Catwalk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D95027026C9D4C700EC7AB1 /* Catwalk.framework */; };
-		1D95027F26C9D4C800EC7AB1 /* CatwalkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D95027E26C9D4C800EC7AB1 /* CatwalkTests.swift */; };
 		1D95028126C9D4C800EC7AB1 /* Catwalk.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D95027326C9D4C700EC7AB1 /* Catwalk.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1DDAA57726C9E5F300104FBD /* genieBack.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DDAA57626C9E5F300104FBD /* genieBack.png */; };
 		1DDAA57926C9E5FF00104FBD /* genieClose.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DDAA57826C9E5FF00104FBD /* genieClose.png */; };
@@ -66,11 +68,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1D09B82726CC4DA00040AB0D /* CTWGenieLooksViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTWGenieLooksViewModelTests.swift; sourceTree = "<group>"; };
+		1D09B82926CC6BB40040AB0D /* CTWShoppingClothingViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTWShoppingClothingViewModelTests.swift; sourceTree = "<group>"; };
+		1D09B82B26CC87FC0040AB0D /* ArrayExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
 		1D95027026C9D4C700EC7AB1 /* Catwalk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Catwalk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D95027326C9D4C700EC7AB1 /* Catwalk.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Catwalk.h; sourceTree = "<group>"; };
 		1D95027426C9D4C700EC7AB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1D95027926C9D4C800EC7AB1 /* CatwalkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CatwalkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1D95027E26C9D4C800EC7AB1 /* CatwalkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatwalkTests.swift; sourceTree = "<group>"; };
 		1D95028026C9D4C800EC7AB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1DDAA57626C9E5F300104FBD /* genieBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = genieBack.png; sourceTree = "<group>"; };
 		1DDAA57826C9E5FF00104FBD /* genieClose.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = genieClose.png; sourceTree = "<group>"; };
@@ -187,8 +191,9 @@
 		1D95027D26C9D4C800EC7AB1 /* CatwalkTests */ = {
 			isa = PBXGroup;
 			children = (
-				1D95027E26C9D4C800EC7AB1 /* CatwalkTests.swift */,
 				1D95028026C9D4C800EC7AB1 /* Info.plist */,
+				1D09B82726CC4DA00040AB0D /* CTWGenieLooksViewModelTests.swift */,
+				1D09B82926CC6BB40040AB0D /* CTWShoppingClothingViewModelTests.swift */,
 			);
 			path = CatwalkTests;
 			sourceTree = "<group>";
@@ -249,6 +254,7 @@
 				1DDAA5AD26C9EDD200104FBD /* UIButtonExtensions.swift */,
 				1DDAA5AF26C9EDE000104FBD /* UIColorExtensions.swift */,
 				1DDAA5B126C9EE2200104FBD /* UIViewExtensions.swift */,
+				1D09B82B26CC87FC0040AB0D /* ArrayExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -509,6 +515,7 @@
 				1DDAA5AB26C9ED3400104FBD /* CTWOfflineStateViewController.swift in Sources */,
 				1DDAA5C026C9EEE100104FBD /* CTWNetworkManager.swift in Sources */,
 				1DDAA5D326C9EF7900104FBD /* CTWShoppingClothingViewModel.swift in Sources */,
+				1D09B82C26CC87FC0040AB0D /* ArrayExtensions.swift in Sources */,
 				1DDAA5DF26C9EFDC00104FBD /* CTWShoppingClothingItemTableViewCell.swift in Sources */,
 				1DDAA5B226C9EE2200104FBD /* UIViewExtensions.swift in Sources */,
 				1DDAA5DD26C9EFD400104FBD /* CTWLookCollectionViewCell.swift in Sources */,
@@ -520,7 +527,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D95027F26C9D4C800EC7AB1 /* CatwalkTests.swift in Sources */,
+				1D09B82A26CC6BB40040AB0D /* CTWShoppingClothingViewModelTests.swift in Sources */,
+				1D09B82826CC4DA00040AB0D /* CTWGenieLooksViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
