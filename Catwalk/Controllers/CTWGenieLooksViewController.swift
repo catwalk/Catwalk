@@ -108,7 +108,7 @@ class CTWGenieLooksViewController: CTWGenieContainerViewController {
                             loader.dismiss(animated: true) {
                                 let genieShoppingListViewController = CTWGenieShoppingListViewController()
                                 genieShoppingListViewController.shoppingMode = .look
-                                genieShoppingListViewController.products = products
+                                genieShoppingListViewController.genieShoppingListViewModel = CTWGenieShoppingListViewModel(products: products)
                                 self?.navigationController?.pushViewController(genieShoppingListViewController, animated: true)
                             }
                         }

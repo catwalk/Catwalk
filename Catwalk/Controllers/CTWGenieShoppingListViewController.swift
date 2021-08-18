@@ -19,18 +19,37 @@ protocol CTWLKAssistantShoppingDelegate {
 
 class CTWGenieShoppingListViewController: CTWGenieContainerViewController {
     
-    var shoppingMode: CTWGenieShoppingMode = .size
+    var shoppingMode: CTWGenieShoppingMode = .size {
+        didSet {
+            if (shoppingMode == .look) {
+                lbTotalPrice.isHidden = false
+                divider.isHidden = false
+            } else {
+                lbTotalPrice.isHidden = true
+                divider.isHidden = true
+            }
+        }
+    }
     
     private let cellIdentifier = "clothingCell"
     
     var shoppingProducts: [CTWShoppingProduct]?
     
-    var products: [CTWProduct]? {
+    var genieShoppingListViewModel: CTWGenieShoppingListViewModel? {
         didSet {
-            shoppingProducts = products?.map({ CTWShoppingProduct(productId: $0.productId, sku: $0.sizes?[0].sku, identifier: $0.sizes?[0].identifier)})
+            lbTotalPrice.text = genieShoppingListViewModel?.totalPrice
             clothesTableView.reloadData()
         }
     }
+    
+    var priceInfoStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.spacing = 20
+        stackView.distribution = .fillProportionally
+        stackView.layoutMargins = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+        return stackView
+    }()
     
     lazy var clothesTableView: UITableView = {
         let tableView = UITableView()
@@ -39,6 +58,22 @@ class CTWGenieShoppingListViewController: CTWGenieContainerViewController {
         tableView.register(CTWShoppingClothingItemTableViewCell.self, forCellReuseIdentifier: cellIdentifier)
         tableView.tableFooterView = UIView(frame: CGRect.zero)
         return tableView
+    }()
+    
+    var divider: UIView = {
+        let view = UIView()
+        view.setHeight(1)
+        view.backgroundColor = .gray
+        view.isHidden = true
+        return view
+    }()
+    
+    var lbTotalPrice: UILabel = {
+        let label = UILabel()
+        label.font = UIFont(name: Customization.boldFontName, size: 20)
+        label.textAlignment = .right
+        label.isHidden = true
+        return label
     }()
     
     lazy var btnSendToCart: UIButton = {
@@ -61,11 +96,21 @@ class CTWGenieShoppingListViewController: CTWGenieContainerViewController {
         btnBack.setTitleColor(.black, for: .normal)
         btnClose.setTitleColor(.black, for: .normal)
         view.backgroundColor = .white
-        [clothesTableView, btnSendToCart].forEach { itemView in
+        
+        priceInfoStackView.addArrangedSubview(divider)
+        priceInfoStackView.addArrangedSubview(lbTotalPrice)
+        
+        [clothesTableView, priceInfoStackView, btnSendToCart].forEach { itemView in
             view.addSubview(itemView)
         }
         
-        clothesTableView.anchor(top: btnClose.bottomAnchor, left: view.leftAnchor, bottom: btnSendToCart.topAnchor, right: view.rightAnchor, paddingTop: 16, paddingLeft: 20, paddingBottom: 16, paddingRight: 20)
+        clothesTableView.anchor(top: btnClose.bottomAnchor, left: view.leftAnchor, bottom: priceInfoStackView.topAnchor, right: view.rightAnchor, paddingTop: 16, paddingLeft: 20, paddingBottom: 20, paddingRight: 20)
+        
+        priceInfoStackView.anchor(left: view.safeAreaLayoutGuide.leftAnchor, bottom: btnSendToCart.topAnchor, right: view.safeAreaLayoutGuide.rightAnchor, paddingLeft: 40, paddingBottom: 20, paddingRight: 40)
+        
+//        divider.anchor(left: view.safeAreaLayoutGuide.leftAnchor, bottom: lbTotalPrice.topAnchor, right: view.safeAreaLayoutGuide.rightAnchor, paddingLeft: 40, paddingBottom: 20, paddingRight: 40)
+//
+//        lbTotalPrice.anchor(bottom: btnSendToCart.topAnchor, right: view.safeAreaLayoutGuide.rightAnchor, paddingBottom: 20, paddingRight: 40)
         btnSendToCart.centerX(inView: view)
         btnSendToCart.anchor(bottom: view.safeAreaLayoutGuide.bottomAnchor, paddingBottom: 32)
     }
@@ -80,7 +125,7 @@ class CTWGenieShoppingListViewController: CTWGenieContainerViewController {
 
 extension CTWGenieShoppingListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return products?.count ?? 0
+        return genieShoppingListViewModel?.totalProducts ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -88,7 +133,7 @@ extension CTWGenieShoppingListViewController: UITableViewDelegate, UITableViewDa
         cell.selectionStyle = .none
         cell.delegate = self
         cell.editable = shoppingMode == .look
-        if let item = products?[indexPath.row] {
+        if let item = genieShoppingListViewModel?.getProduct(at: indexPath.row) {
             cell.shoppingClothingViewModel = CTWShoppingClothingViewModel(product: item, delegate: self)
         }
         
@@ -110,10 +155,12 @@ extension CTWGenieShoppingListViewController: UITableViewDelegate, UITableViewDa
 
 extension CTWGenieShoppingListViewController: CTWShoppingClothingItemTableViewCellDelegate {
     func didRemoveItemWith(productId: String?) {
-        let productIndex = products?.firstIndex(where: { $0.productId == productId })
-        guard let index = productIndex else { return }
-        products?.remove(at: index)
-        clothesTableView.reloadData()
+        genieShoppingListViewModel?.removeProductByProductId(productId)
+        if let totalProducts = genieShoppingListViewModel?.totalProducts, totalProducts > 0 {
+            clothesTableView.reloadData()
+        } else {
+            navigationController?.popViewController(animated: true)
+        }
     }
 }
 

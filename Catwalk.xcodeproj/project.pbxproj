@@ -10,6 +10,8 @@
 		1D09B82826CC4DA00040AB0D /* CTWGenieLooksViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D09B82726CC4DA00040AB0D /* CTWGenieLooksViewModelTests.swift */; };
 		1D09B82A26CC6BB40040AB0D /* CTWShoppingClothingViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D09B82926CC6BB40040AB0D /* CTWShoppingClothingViewModelTests.swift */; };
 		1D09B82C26CC87FC0040AB0D /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D09B82B26CC87FC0040AB0D /* ArrayExtensions.swift */; };
+		1D0DEABC26CDC2F400ABF47A /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 1D0DEABB26CDC2F400ABF47A /* SDWebImage */; };
+		1D0DEABE26CDC77E00ABF47A /* CTWGenieShoppingListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0DEABD26CDC77E00ABF47A /* CTWGenieShoppingListViewModel.swift */; };
 		1D95027A26C9D4C800EC7AB1 /* Catwalk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D95027026C9D4C700EC7AB1 /* Catwalk.framework */; };
 		1D95028126C9D4C800EC7AB1 /* Catwalk.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D95027326C9D4C700EC7AB1 /* Catwalk.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1DDAA57726C9E5F300104FBD /* genieBack.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DDAA57626C9E5F300104FBD /* genieBack.png */; };
@@ -50,7 +52,6 @@
 		1DDAA5DD26C9EFD400104FBD /* CTWLookCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDAA5DC26C9EFD400104FBD /* CTWLookCollectionViewCell.swift */; };
 		1DDAA5DF26C9EFDC00104FBD /* CTWShoppingClothingItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDAA5DE26C9EFDC00104FBD /* CTWShoppingClothingItemTableViewCell.swift */; };
 		1DDAA5E226C9F0B300104FBD /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 1DDAA5E126C9F0B300104FBD /* SDWebImage */; };
-		1DDAA5E726C9F1B300104FBD /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 1DDAA5E626C9F1B300104FBD /* SDWebImage */; };
 		1DDAA5EA26CA95D900104FBD /* GreycliffCF-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1DDAA5C526C9EF1E00104FBD /* GreycliffCF-Bold.ttf */; };
 		1DDAA5EB26CA95DD00104FBD /* Greycliff-CF-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1DDAA5C426C9EF1D00104FBD /* Greycliff-CF-Light.ttf */; };
 		1DDAA5EC26CA95E100104FBD /* Greycliff-CF-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1DDAA5C326C9EF1D00104FBD /* Greycliff-CF-Regular.ttf */; };
@@ -71,6 +72,7 @@
 		1D09B82726CC4DA00040AB0D /* CTWGenieLooksViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTWGenieLooksViewModelTests.swift; sourceTree = "<group>"; };
 		1D09B82926CC6BB40040AB0D /* CTWShoppingClothingViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTWShoppingClothingViewModelTests.swift; sourceTree = "<group>"; };
 		1D09B82B26CC87FC0040AB0D /* ArrayExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
+		1D0DEABD26CDC77E00ABF47A /* CTWGenieShoppingListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTWGenieShoppingListViewModel.swift; sourceTree = "<group>"; };
 		1D95027026C9D4C700EC7AB1 /* Catwalk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Catwalk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D95027326C9D4C700EC7AB1 /* Catwalk.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Catwalk.h; sourceTree = "<group>"; };
 		1D95027426C9D4C700EC7AB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -142,7 +144,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1DDAA5E726C9F1B300104FBD /* SDWebImage in Frameworks */,
+				1D0DEABC26CDC2F400ABF47A /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,6 +305,7 @@
 			children = (
 				1DDAA5D026C9EF6F00104FBD /* CTWGenieLooksViewModel.swift */,
 				1DDAA5D226C9EF7900104FBD /* CTWShoppingClothingViewModel.swift */,
+				1D0DEABD26CDC77E00ABF47A /* CTWGenieShoppingListViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -401,7 +404,7 @@
 			);
 			name = CatwalkExamples;
 			packageProductDependencies = (
-				1DDAA5E626C9F1B300104FBD /* SDWebImage */,
+				1D0DEABB26CDC2F400ABF47A /* SDWebImage */,
 			);
 			productName = CatwalkExamples;
 			productReference = 1DDAA58426C9E6DF00104FBD /* CatwalkExamples.app */;
@@ -501,6 +504,7 @@
 				1DDAA5CC26C9EF3D00104FBD /* Config.swift in Sources */,
 				1DDAA5DB26C9EFCC00104FBD /* CTWChatUserMessageTableViewCell.swift in Sources */,
 				1DDAA5B426C9EE6000104FBD /* CTWChatMessage.swift in Sources */,
+				1D0DEABE26CDC77E00ABF47A /* CTWGenieShoppingListViewModel.swift in Sources */,
 				1DDAA59D26C9E98100104FBD /* CTWGenieViewController.swift in Sources */,
 				1DDAA59F26C9ECE200104FBD /* CTWGenieChatViewController.swift in Sources */,
 				1DDAA5B926C9EE8900104FBD /* CTWDefaultResponse.swift in Sources */,
@@ -864,12 +868,12 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		1DDAA5E126C9F0B300104FBD /* SDWebImage */ = {
+		1D0DEABB26CDC2F400ABF47A /* SDWebImage */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 1DDAA5E026C9F0B300104FBD /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImage;
 		};
-		1DDAA5E626C9F1B300104FBD /* SDWebImage */ = {
+		1DDAA5E126C9F0B300104FBD /* SDWebImage */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 1DDAA5E026C9F0B300104FBD /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImage;
