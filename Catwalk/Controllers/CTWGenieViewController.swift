@@ -353,7 +353,7 @@ class CTWGenieViewController: CTWGenieContainerViewController {
                         if let sizes = product.sizes, sizes.count > 0 {
                             loader.dismiss(animated: true) {
                                 let genieShoppingListViewController = CTWGenieShoppingListViewController()
-                                genieShoppingListViewController.products = sizes.map({ CTWProduct(headline: product.headline, productId: product.productId, image: product.image, price: product.price, sizes: [$0]) })
+                                genieShoppingListViewController.genieShoppingListViewModel = CTWGenieShoppingListViewModel(products: sizes.map({ CTWProduct(headline: product.headline, productId: product.productId, image: product.image, price: product.price, sizes: [$0]) }))
                                 self?.navigationController?.pushViewController(genieShoppingListViewController, animated: true)
                             }
                         } else {
