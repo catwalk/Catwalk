@@ -2,7 +2,7 @@
 os: osx
 osx_image: xcode11.6
 language: swift
-script: 'xcodebuild clean test -project FDTestableLib.xcodeproj -scheme "FDTestableLib" -sdk iphonesimulator -destination "platform=iOS Simulator,OS=13.6,name=iphone 11" ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO'
+script: 'xcodebuild clean test -project Catwalk.xcodeproj -scheme "Catwalk" -sdk iphonesimulator -destination "platform=iOS Simulator,OS=13.6,name=iphone 11" ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO'
 notifications:
   email:
     recipients:
