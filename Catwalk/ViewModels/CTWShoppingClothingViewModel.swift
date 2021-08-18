@@ -15,11 +15,13 @@ struct CTWShoppingClothingViewModel {
     }
     
     var currentPrice: String? {
-        return "R$ \(CTWAppUtils.formatNumberToDecimal(value: Double((product.price?.currentPriceInCents ?? 0)/100)))"
+        guard let currentPriceInCents = product.price?.currentPriceInCents else { return nil }
+        return "R$ \(CTWAppUtils.formatNumberToDecimal(value: Double(currentPriceInCents/100)))"
     }
     
     var imageURL: URL? {
-        return URL(string: product.image ?? "")
+        guard let imageURL = product.image else { return nil}
+        return URL(string: imageURL)
     }
     
     var sizesCount: Int {
@@ -27,11 +29,12 @@ struct CTWShoppingClothingViewModel {
     }
     
     func sizeAt(index: Int) -> String {
-        return product.sizes?[index].identifier ?? ""
+        return product.sizes?[safe: index]?.identifier ?? ""
     }
     
     func textForSizeAt(index: Int) -> String {
-        return "Tamanho \(product.sizes?[index].identifier ?? "")"
+        guard let sizeIdentifier = product.sizes?[safe: index]?.identifier else { return "" }
+        return "Tamanho \(sizeIdentifier)"
     }
     
     func updateSize(at index: Int) {
