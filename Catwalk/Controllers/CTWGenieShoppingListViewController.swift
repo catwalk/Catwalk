@@ -105,19 +105,14 @@ class CTWGenieShoppingListViewController: CTWGenieContainerViewController {
         }
         
         clothesTableView.anchor(top: btnClose.bottomAnchor, left: view.leftAnchor, bottom: priceInfoStackView.topAnchor, right: view.rightAnchor, paddingTop: 16, paddingLeft: 20, paddingBottom: 20, paddingRight: 20)
-        
         priceInfoStackView.anchor(left: view.safeAreaLayoutGuide.leftAnchor, bottom: btnSendToCart.topAnchor, right: view.safeAreaLayoutGuide.rightAnchor, paddingLeft: 40, paddingBottom: 20, paddingRight: 40)
-        
-//        divider.anchor(left: view.safeAreaLayoutGuide.leftAnchor, bottom: lbTotalPrice.topAnchor, right: view.safeAreaLayoutGuide.rightAnchor, paddingLeft: 40, paddingBottom: 20, paddingRight: 40)
-//
-//        lbTotalPrice.anchor(bottom: btnSendToCart.topAnchor, right: view.safeAreaLayoutGuide.rightAnchor, paddingBottom: 20, paddingRight: 40)
         btnSendToCart.centerX(inView: view)
         btnSendToCart.anchor(bottom: view.safeAreaLayoutGuide.bottomAnchor, paddingBottom: 32)
     }
     
     @objc func sendToCart() {
-        let genieVC = navigationController?.viewControllers[0] as? CTWGenieViewController
-        genieVC?.delegate?.didReturnShoppingItems(skus: shoppingProducts?.map({ $0.sku ?? "" }) ?? [])
+        let assistantViewController = navigationController?.viewControllers[0] as? CTWGenieViewController
+        assistantViewController?.delegate?.didReturnShoppingItems(skus: shoppingProducts?.map({ $0.sku ?? "" }) ?? [])
         self.dismiss(animated: true)
     }
 
@@ -146,8 +141,8 @@ extension CTWGenieShoppingListViewController: UITableViewDelegate, UITableViewDa
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if shoppingMode == .size, let sku = shoppingProducts?[indexPath.row].sku {
-            let genieVC = navigationController?.viewControllers[0] as? CTWGenieViewController
-            genieVC?.delegate?.didReturnSingleItem(sku: sku)
+            let assistantViewController = navigationController?.viewControllers[0] as? CTWGenieViewController
+            assistantViewController?.delegate?.didReturnSingleItem(sku: sku)
             self.dismiss(animated: true)
         }
     }

@@ -53,7 +53,7 @@ class CTWGenieLooksViewController: CTWGenieContainerViewController {
     lazy var btnLikeLook: UIButton = {
         let button = UIButton(type: .system)
         let bundle = Bundle(for: CTWGenieLooksViewController.self)
-        let imageIcon = UIImage(named: "genieLike", in: bundle, with: nil)?.withTintColor(Customization.generalButtonBackgroundColor, renderingMode: .alwaysOriginal)
+        let imageIcon = UIImage(named: "genieLike", in: bundle, with: nil)?.withTintColor(.gray, renderingMode: .alwaysOriginal)
         button.setImage(imageIcon, for: .normal)
         button.addTarget(self, action: #selector(likeLook), for: .touchUpInside)
         button.setDimensions(height: 50, width: 50)
@@ -126,6 +126,8 @@ class CTWGenieLooksViewController: CTWGenieContainerViewController {
     
     @objc func likeLook() {
         if let productIds = genieLooksViewModel?.currentLook?.items.map({ $0.product?.productId ?? "" }).filter({ $0 != "" }) {
+            genieLooksViewModel?.likeCurrentLook()
+            updateLikeButtonColor()
             let loader = CTWAppUtils.createLoader(title: "Carregando")
             self.present(loader, animated: true)
             
@@ -146,6 +148,10 @@ class CTWGenieLooksViewController: CTWGenieContainerViewController {
             }
         }
     }
+    
+    func updateLikeButtonColor() {
+        btnLikeLook.setImage(btnLikeLook.imageView?.image?.withTintColor(genieLooksViewModel?.likedLookButtonColorForCurrentLook() ?? .gray), for: .normal)
+    }
 }
 
 extension CTWGenieLooksViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -157,11 +163,13 @@ extension CTWGenieLooksViewController: UICollectionViewDelegate, UICollectionVie
         let look = genieLooksViewModel?.looks[indexPath.row]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: lookCellIdentifier, for: indexPath) as! CTWLookCollectionViewCell
         cell.look = look
+        cell.delegate = self
         return cell
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         genieLooksViewModel?.currentLookIndex = Int(floorf(Float(scrollView.contentOffset.x / scrollView.frame.width)))
+        updateLikeButtonColor()
     }
     
 }
@@ -181,3 +189,10 @@ extension CTWGenieLooksViewController: UICollectionViewDelegateFlowLayout {
 
 }
 
+extension CTWGenieLooksViewController: CTWLookItemDelegate {
+    func didSelectionItemLook(sku: String) {
+        let assistantViewController = navigationController?.viewControllers[0] as? CTWGenieViewController
+        assistantViewController?.delegate?.didReturnSingleItem(sku: sku)
+        self.dismiss(animated: true)
+    }
+}

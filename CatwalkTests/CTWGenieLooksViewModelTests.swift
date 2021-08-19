@@ -85,5 +85,42 @@ class CTWGenieLooksViewModelTests: XCTestCase {
         sut.currentLookIndex = 0
         XCTAssertEqual(sut.currentLookTotalPrice, "por R$ 339,50")
     }
-
+    
+    func testCTWGenieLooksViewMode_WhenLikeCurrentLookCalled_isCurrentLookLikedShouldReturnTrue() {
+        let look = CTWLook()
+        var sut = CTWGenieLooksViewModel(looks: [look])
+        sut.currentLookIndex = 0
+        sut.likeCurrentLook()
+        XCTAssertTrue(sut.isCurrentLookLiked())
+    }
+    
+    func testCTWGenieLooksViewMode_WhenLookHasNoDataForLikedLook_isCurrentLookLikedShouldReturnFalse() {
+        let look = CTWLook()
+        let sut = CTWGenieLooksViewModel(looks: [look])
+        XCTAssertFalse(sut.isCurrentLookLiked())
+    }
+    
+    func testCTWGenieLooksViewMode_WhenLookIsNotLiked_isCurrentLookLikedShouldReturnFalse() {
+        let look = CTWLook(likedLook: false)
+        let sut = CTWGenieLooksViewModel(looks: [look])
+        XCTAssertFalse(sut.isCurrentLookLiked())
+    }
+    
+    func testCTWGenieLooksViewMode_WhenLookIsLiked_isCurrentLookLikedShouldReturnTrue() {
+        let look = CTWLook(likedLook: true)
+        let sut = CTWGenieLooksViewModel(looks: [look])
+        XCTAssertTrue(sut.isCurrentLookLiked())
+    }
+    
+    func testCTWGenieLooksViewMode_WhenLookIsNotLiked_likedLookButtonBackgroundColorShouldReturnGray() {
+        let look = CTWLook(likedLook: false)
+        let sut = CTWGenieLooksViewModel(looks: [look])
+        XCTAssertEqual(sut.likedLookButtonColorForCurrentLook(), UIColor.gray)
+    }
+    
+    func testCTWGenieLooksViewMode_WhenLookIsLiked_likedLookButtonBackgroundColorShouldReturnCustomizationGeneralButtonBackgroundColor() {
+        let look = CTWLook(likedLook: true)
+        let sut = CTWGenieLooksViewModel(looks: [look])
+        XCTAssertEqual(sut.likedLookButtonColorForCurrentLook(), Customization.generalButtonBackgroundColor)
+    }
 }

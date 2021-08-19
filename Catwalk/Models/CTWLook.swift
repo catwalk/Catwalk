@@ -6,8 +6,19 @@
 //  Copyright © 2021 CATWALK. All rights reserved.
 //
 
-struct CTWLook: Decodable {
+class CTWLook: Decodable {
     var items: [CTWLookItem] = []
+    var likedLook: Bool?
+    
+    init() {}
+    
+    init(items: [CTWLookItem]) {
+        self.items = items
+    }
+    
+    init(likedLook: Bool) {
+        self.likedLook = likedLook
+    }
 }
 
 struct CTWLookItem: Decodable {

@@ -11,6 +11,8 @@ import SDWebImage
 
 class CTWLookCollectionViewCell: UICollectionViewCell {
     
+    var delegate: CTWLookItemDelegate?
+    
     var look: CTWLook? {
         didSet {
             setupLayout(for: look)
@@ -87,6 +89,8 @@ class CTWLookCollectionViewCell: UICollectionViewCell {
         let weight =  CGFloat((lookItem.weight ?? 0)/5)
         let view = CTWLookContainerView()
         view.height = frame.height * weight
+        addGestureToLookItem(view: view.btnContainer, lookItem: lookItem)
+        view.btnContainer.addTarget(self, action: #selector(itemPressed), for: .touchUpInside)
         if let image = lookItem.product?.image, image != "" {
             view.imageView.sd_setImage(with: URL(string: image))
         }
@@ -100,4 +104,19 @@ class CTWLookCollectionViewCell: UICollectionViewCell {
             view.removeFromSuperview()
         }
     }
+    
+    func addGestureToLookItem(view: UIView, lookItem: CTWLookItem) {
+        let tapGesture = LookItemTapGestureRecognizer(target: self, action: #selector(itemPressed(sender:)))
+        tapGesture.lookItem = lookItem
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func itemPressed(sender: LookItemTapGestureRecognizer) {
+        guard let itemSKU = sender.lookItem?.product?.sku else { return }
+        delegate?.didSelectionItemLook(sku: itemSKU)
+    }
+}
+
+class LookItemTapGestureRecognizer: UITapGestureRecognizer {
+    var lookItem: CTWLookItem?
 }
