@@ -163,6 +163,7 @@ extension CTWGenieLooksViewController: UICollectionViewDelegate, UICollectionVie
         let look = genieLooksViewModel?.looks[indexPath.row]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: lookCellIdentifier, for: indexPath) as! CTWLookCollectionViewCell
         cell.look = look
+        cell.delegate = self
         return cell
     }
     
@@ -188,3 +189,10 @@ extension CTWGenieLooksViewController: UICollectionViewDelegateFlowLayout {
 
 }
 
+extension CTWGenieLooksViewController: CTWLookItemDelegate {
+    func didSelectionItemLook(sku: String) {
+        let assistantViewController = navigationController?.viewControllers[0] as? CTWGenieViewController
+        assistantViewController?.delegate?.didReturnSingleItem(sku: sku)
+        self.dismiss(animated: true)
+    }
+}
