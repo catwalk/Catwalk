@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "Catwalk"
-  spec.version      = "0.9.4"
+  spec.version      = "0.9.5"
   spec.summary      = "Catwalk's CocoaPods library for you Fashion Virtual Assistant"
 
   spec.description  = <<-DESC
