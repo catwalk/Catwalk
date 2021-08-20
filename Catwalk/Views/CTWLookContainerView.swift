@@ -10,6 +10,15 @@ import UIKit
 
 class CTWLookContainerView: UIView {
     var height: CGFloat = 1.0
+    
+    var delegate: CTWLookItemDelegate?
+    
+    var btnContainer: UIButton = {
+        let button = UIButton(type: .system)
+        button.backgroundColor = .clear
+        return button
+    }()
+    
     var imageView: UIImageView = {
         let iv = UIImageView()
         iv.backgroundColor = .white
@@ -36,11 +45,11 @@ class CTWLookContainerView: UIView {
     func setupUI() {
         addSubview(imageView)
         addSubview(infoIcon)
+        addSubview(btnContainer)
         
         imageView.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 8, paddingLeft: 8, paddingBottom: 8, paddingRight: 8)
         infoIcon.anchor(top: imageView.topAnchor, left: imageView.leftAnchor)
-        infoIcon.isHidden = true
-        
+        btnContainer.fillSuperview()
     }
     
     override var intrinsicContentSize: CGSize {

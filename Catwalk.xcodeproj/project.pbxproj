@@ -12,6 +12,7 @@
 		1D09B82C26CC87FC0040AB0D /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D09B82B26CC87FC0040AB0D /* ArrayExtensions.swift */; };
 		1D0DEABC26CDC2F400ABF47A /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 1D0DEABB26CDC2F400ABF47A /* SDWebImage */; };
 		1D0DEABE26CDC77E00ABF47A /* CTWGenieShoppingListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0DEABD26CDC77E00ABF47A /* CTWGenieShoppingListViewModel.swift */; };
+		1D0DEAC126CEF9D700ABF47A /* CTWLookItemDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0DEAC026CEF9D700ABF47A /* CTWLookItemDelegate.swift */; };
 		1D95027A26C9D4C800EC7AB1 /* Catwalk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D95027026C9D4C700EC7AB1 /* Catwalk.framework */; };
 		1D95028126C9D4C800EC7AB1 /* Catwalk.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D95027326C9D4C700EC7AB1 /* Catwalk.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1DDAA57726C9E5F300104FBD /* genieBack.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DDAA57626C9E5F300104FBD /* genieBack.png */; };
@@ -73,6 +74,7 @@
 		1D09B82926CC6BB40040AB0D /* CTWShoppingClothingViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTWShoppingClothingViewModelTests.swift; sourceTree = "<group>"; };
 		1D09B82B26CC87FC0040AB0D /* ArrayExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
 		1D0DEABD26CDC77E00ABF47A /* CTWGenieShoppingListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTWGenieShoppingListViewModel.swift; sourceTree = "<group>"; };
+		1D0DEAC026CEF9D700ABF47A /* CTWLookItemDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTWLookItemDelegate.swift; sourceTree = "<group>"; };
 		1D95027026C9D4C700EC7AB1 /* Catwalk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Catwalk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D95027326C9D4C700EC7AB1 /* Catwalk.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Catwalk.h; sourceTree = "<group>"; };
 		1D95027426C9D4C700EC7AB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -151,6 +153,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D0DEABF26CECB1100ABF47A /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				1D0DEAC026CEF9D700ABF47A /* CTWLookItemDelegate.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		1D95026626C9D4C700EC7AB1 = {
 			isa = PBXGroup;
 			children = (
@@ -175,6 +185,7 @@
 		1D95027226C9D4C700EC7AB1 /* Catwalk */ = {
 			isa = PBXGroup;
 			children = (
+				1D0DEABF26CECB1100ABF47A /* Protocols */,
 				1DDAA5D426C9EFAB00104FBD /* Views */,
 				1DDAA5CF26C9EF5D00104FBD /* ViewModels */,
 				1DDAA5CA26C9EF3400104FBD /* Utils */,
@@ -514,6 +525,7 @@
 				1DDAA5AE26C9EDD200104FBD /* UIButtonExtensions.swift in Sources */,
 				1DDAA5A326C9ED0900104FBD /* CTWGenieCreateLookColorOptionsViewController.swift in Sources */,
 				1DDAA5BB26C9EE9100104FBD /* CTWLook.swift in Sources */,
+				1D0DEAC126CEF9D700ABF47A /* CTWLookItemDelegate.swift in Sources */,
 				1DDAA5A526C9ED1200104FBD /* CTWGenieCreateLookGlobalOptionsViewController.swift in Sources */,
 				1DDAA5D726C9EFBB00104FBD /* CTWLookContainerView.swift in Sources */,
 				1DDAA5AB26C9ED3400104FBD /* CTWOfflineStateViewController.swift in Sources */,

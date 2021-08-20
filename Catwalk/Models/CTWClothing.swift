@@ -10,6 +10,7 @@ struct CTWProduct: Decodable {
     var headline: String?
     var productId: String?
     var image: String?
+    var sku: String?
     var price: CTWPrice?
     var sizes: [CTWSize]?
 }
