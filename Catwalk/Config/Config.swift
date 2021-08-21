@@ -12,6 +12,7 @@ public class GenieAPI {
     public static var apiToken: String?
     static let bundle = Bundle.main.bundleIdentifier ?? ""
     static let CTWLK_API_ROOT = "https://app.mycatwalk.com/mobile"
+    static var sessionId: String?
 }
 
 public class Customization {

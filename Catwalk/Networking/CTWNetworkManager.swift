@@ -20,62 +20,45 @@ class CTWNetworkManager {
     
     public static let shared = CTWNetworkManager()
     
+    public func fetchSessionInfo(result: @escaping (Result<CTWSession, APIServiceError>) -> Void) {
+        let url = URL(string: "\(GenieAPI.CTWLK_API_ROOT)/session")!
+        let request = createRequest(url: url)
+        fetchResources(urlRequest: request, completion: result)
+    }
+    
+    public func endSession(result: @escaping (Result<CTWDefaultResponse, APIServiceError>) -> Void) {
+        let url = URL(string: "\(GenieAPI.CTWLK_API_ROOT)/endSession")!
+        let request = createRequest(url: url, httpMethod: "POST")
+        fetchResources(urlRequest: request, completion: result)
+    }
+    
     public func checkIfSKUAvailable(sku: String, result: @escaping (Result<CTWSKUAvailability, APIServiceError>) -> Void) {
         let url = URL(string: "\(GenieAPI.CTWLK_API_ROOT)/sku/availability")!
-        
-        var request = URLRequest(url: url)
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.setValue(GenieAPI.apiToken, forHTTPHeaderField: "apiToken")
-        request.setValue(GenieAPI.bundle, forHTTPHeaderField: "bundle")
-        request.setValue(sku, forHTTPHeaderField: "sku")
-        
+        let request = createRequest(url: url, sku: sku)
         fetchResources(urlRequest: request, completion: result)
     }
         
     public func fetchLooks(for sku: String, result: @escaping (Result<[CTWLook], APIServiceError>) -> Void) {
         let url = URL(string: "\(GenieAPI.CTWLK_API_ROOT)/combinations?structured=true")!
-        
-        var request = URLRequest(url: url)
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.setValue(GenieAPI.apiToken, forHTTPHeaderField: "apiToken")
-        request.setValue(GenieAPI.bundle, forHTTPHeaderField: "bundle")
-        request.setValue(sku, forHTTPHeaderField: "sku")
-        
+        let request = createRequest(url: url, sku: sku)
         fetchResources(urlRequest: request, completion: result)
     }
     
     public func fetchSimilars(for sku: String, result: @escaping (Result<[String], APIServiceError>) -> Void) {
         let url = URL(string: "\(GenieAPI.CTWLK_API_ROOT)/similars")!
-
-        var request = URLRequest(url: url)
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.setValue(GenieAPI.apiToken, forHTTPHeaderField: "apiToken")
-        request.setValue(GenieAPI.bundle, forHTTPHeaderField: "bundle")
-        request.setValue(sku, forHTTPHeaderField: "sku")
-        
+        let request = createRequest(url: url, sku: sku)
         fetchResources(urlRequest: request, completion: result)
     }
     
     public func availableColors(for sku: String, result: @escaping (Result<[CTWProduct], APIServiceError>) -> Void) {
         let url = URL(string: "\(GenieAPI.CTWLK_API_ROOT)/availableColors")!
-
-        var request = URLRequest(url: url)
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.setValue(GenieAPI.apiToken, forHTTPHeaderField: "apiToken")
-        request.setValue(GenieAPI.bundle, forHTTPHeaderField: "bundle")
-        request.setValue(sku, forHTTPHeaderField: "sku")
-        
+        let request = createRequest(url: url, sku: sku)
         fetchResources(urlRequest: request, completion: result)
     }
     
     public func fetchProductsInfo(for productIds: [String], result: @escaping (Result<[CTWProduct], APIServiceError>) -> Void) {
         let url = URL(string: "\(GenieAPI.CTWLK_API_ROOT)/productsInfo?productIds=\(productIds.joined(separator: ","))")!
-
-        var request = URLRequest(url: url)
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.setValue(GenieAPI.apiToken, forHTTPHeaderField: "apiToken")
-        request.setValue(GenieAPI.bundle, forHTTPHeaderField: "bundle")
-        
+        let request = createRequest(url: url)
         fetchResources(urlRequest: request, completion: result)
     }
     
@@ -90,81 +73,47 @@ class CTWNetworkManager {
         }
         
         let url = URL(string: urlString)!
-
-        var request = URLRequest(url: url)
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.setValue(GenieAPI.apiToken, forHTTPHeaderField: "apiToken")
-        request.setValue(GenieAPI.bundle, forHTTPHeaderField: "bundle")
-        
+        let request = createRequest(url: url)
         fetchResources(urlRequest: request, completion: result)
     }
     
     public func fetchTrendingSKUs(result: @escaping (Result<[String], APIServiceError>) -> Void) {
         let urlString = "\(GenieAPI.CTWLK_API_ROOT)/trending/clothing"
         let url = URL(string: urlString)!
-
-        var request = URLRequest(url: url)
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.setValue(GenieAPI.apiToken, forHTTPHeaderField: "apiToken")
-        request.setValue(GenieAPI.bundle, forHTTPHeaderField: "bundle")
-        
+        let request = createRequest(url: url)
         fetchResources(urlRequest: request, completion: result)
     }
     
     public func fetchAvailableColors(for sku: String, result: @escaping (Result<[String], APIServiceError>) -> Void) {
         let urlString = "\(GenieAPI.CTWLK_API_ROOT)/availableColors"
         let url = URL(string: urlString)!
-
-        var request = URLRequest(url: url)
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.setValue(GenieAPI.apiToken, forHTTPHeaderField: "apiToken")
-        request.setValue(GenieAPI.bundle, forHTTPHeaderField: "bundle")
-        request.setValue(sku, forHTTPHeaderField: "sku")
-        
+        let request = createRequest(url: url, sku: sku)
         fetchResources(urlRequest: request, completion: result)
     }
     
     public func fetchTrendingClothingAsLooks(result: @escaping (Result<[CTWLook], APIServiceError>) -> Void) {
         let urlString = "\(GenieAPI.CTWLK_API_ROOT)/trending/clothingInLooks"
         let url = URL(string: urlString)!
-
-        var request = URLRequest(url: url)
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.setValue(GenieAPI.apiToken, forHTTPHeaderField: "apiToken")
-        request.setValue(GenieAPI.bundle, forHTTPHeaderField: "bundle")
-        
+        let request = createRequest(url: url)
         fetchResources(urlRequest: request, completion: result)
     }
     
     public func fetchCombinationsBy(hue: Int, result: @escaping (Result<[CTWLook], APIServiceError>) -> Void) {
         let urlString = "\(GenieAPI.CTWLK_API_ROOT)/combinations?hue=\(hue)"
         let url = URL(string: urlString)!
-
-        var request = URLRequest(url: url)
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.setValue(GenieAPI.apiToken, forHTTPHeaderField: "apiToken")
-        request.setValue(GenieAPI.bundle, forHTTPHeaderField: "bundle")
-        
+        let request = createRequest(url: url)
         fetchResources(urlRequest: request, completion: result)
     }
     
     public func fetchChatMessageResponse(for message: String, with sku: String?, result: @escaping (Result<CTWChatMessage, APIServiceError>) -> Void) {
         let urlString = "\(GenieAPI.CTWLK_API_ROOT)/chat/message"
         let url = URL(string: urlString)!
-
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.setValue(GenieAPI.apiToken, forHTTPHeaderField: "apiToken")
-        request.setValue(GenieAPI.bundle, forHTTPHeaderField: "bundle")
         
-        if let sku = sku {
-            request.setValue(sku, forHTTPHeaderField: "sku")
-        }
+        var request = createRequest(url: url, sku: sku, httpMethod: "POST")
         
         let parameters: [String: Any] = [
             "message": message,
-            "sessionId": "TEST_SESSION_ID"
+            "sessionId": GenieAPI.sessionId ?? ""
         ]
         
         do {
@@ -179,13 +128,7 @@ class CTWNetworkManager {
     public func likeLook(with productIds: [String], result: @escaping (Result<CTWDefaultResponse, APIServiceError>) -> Void) {
         let urlString = "\(GenieAPI.CTWLK_API_ROOT)/combinations/like"
         let url = URL(string: urlString)!
-
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.setValue(GenieAPI.apiToken, forHTTPHeaderField: "apiToken")
-        request.setValue(GenieAPI.bundle, forHTTPHeaderField: "bundle")
-        
+        var request = createRequest(url: url, httpMethod: "POST")
         
         let parameters: [String: Any] = [
             "productIds": productIds
@@ -198,6 +141,19 @@ class CTWNetworkManager {
         }
         
         fetchResources(urlRequest: request, completion: result)
+    }
+    
+    private func createRequest(url: URL, sku: String? = nil, httpMethod: String? = "GET") -> URLRequest {
+        var request = URLRequest(url: url)
+        request.httpMethod = httpMethod
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue(GenieAPI.apiToken, forHTTPHeaderField: "apiToken")
+        request.setValue(GenieAPI.bundle, forHTTPHeaderField: "bundle")
+        request.setValue(GenieAPI.sessionId, forHTTPHeaderField: "sessionId")
+        if let sku = sku {
+            request.setValue(sku, forHTTPHeaderField: "sku")
+        }
+        return request
     }
     
     private func fetchResources<T: Decodable>(urlRequest: URLRequest, completion: @escaping (Result<T, APIServiceError>) -> Void) {

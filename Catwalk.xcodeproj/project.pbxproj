@@ -13,6 +13,8 @@
 		1D0DEABC26CDC2F400ABF47A /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 1D0DEABB26CDC2F400ABF47A /* SDWebImage */; };
 		1D0DEABE26CDC77E00ABF47A /* CTWGenieShoppingListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0DEABD26CDC77E00ABF47A /* CTWGenieShoppingListViewModel.swift */; };
 		1D0DEAC126CEF9D700ABF47A /* CTWLookItemDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0DEAC026CEF9D700ABF47A /* CTWLookItemDelegate.swift */; };
+		1D0DEAC526CFFE9400ABF47A /* CTWSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0DEAC426CFFE9400ABF47A /* CTWSession.swift */; };
+		1D0DEAC926D05FE700ABF47A /* CTWAssistantNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0DEAC826D05FE700ABF47A /* CTWAssistantNavigationController.swift */; };
 		1D95027A26C9D4C800EC7AB1 /* Catwalk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D95027026C9D4C700EC7AB1 /* Catwalk.framework */; };
 		1D95028126C9D4C800EC7AB1 /* Catwalk.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D95027326C9D4C700EC7AB1 /* Catwalk.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1DDAA57726C9E5F300104FBD /* genieBack.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DDAA57626C9E5F300104FBD /* genieBack.png */; };
@@ -75,6 +77,8 @@
 		1D09B82B26CC87FC0040AB0D /* ArrayExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
 		1D0DEABD26CDC77E00ABF47A /* CTWGenieShoppingListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTWGenieShoppingListViewModel.swift; sourceTree = "<group>"; };
 		1D0DEAC026CEF9D700ABF47A /* CTWLookItemDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTWLookItemDelegate.swift; sourceTree = "<group>"; };
+		1D0DEAC426CFFE9400ABF47A /* CTWSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTWSession.swift; sourceTree = "<group>"; };
+		1D0DEAC826D05FE700ABF47A /* CTWAssistantNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTWAssistantNavigationController.swift; sourceTree = "<group>"; };
 		1D95027026C9D4C700EC7AB1 /* Catwalk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Catwalk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D95027326C9D4C700EC7AB1 /* Catwalk.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Catwalk.h; sourceTree = "<group>"; };
 		1D95027426C9D4C700EC7AB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -257,6 +261,7 @@
 				1DDAA5A626C9ED1C00104FBD /* CTWGenieLooksViewController.swift */,
 				1DDAA5A826C9ED2600104FBD /* CTWGenieShoppingListViewController.swift */,
 				1DDAA5AA26C9ED3400104FBD /* CTWOfflineStateViewController.swift */,
+				1D0DEAC826D05FE700ABF47A /* CTWAssistantNavigationController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -280,6 +285,7 @@
 				1DDAA5B826C9EE8900104FBD /* CTWDefaultResponse.swift */,
 				1DDAA5BA26C9EE9100104FBD /* CTWLook.swift */,
 				1DDAA5BC26C9EE9B00104FBD /* CTWSKUAvailability.swift */,
+				1D0DEAC426CFFE9400ABF47A /* CTWSession.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -515,6 +521,7 @@
 				1DDAA5CC26C9EF3D00104FBD /* Config.swift in Sources */,
 				1DDAA5DB26C9EFCC00104FBD /* CTWChatUserMessageTableViewCell.swift in Sources */,
 				1DDAA5B426C9EE6000104FBD /* CTWChatMessage.swift in Sources */,
+				1D0DEAC526CFFE9400ABF47A /* CTWSession.swift in Sources */,
 				1D0DEABE26CDC77E00ABF47A /* CTWGenieShoppingListViewModel.swift in Sources */,
 				1DDAA59D26C9E98100104FBD /* CTWGenieViewController.swift in Sources */,
 				1DDAA59F26C9ECE200104FBD /* CTWGenieChatViewController.swift in Sources */,
@@ -534,6 +541,7 @@
 				1D09B82C26CC87FC0040AB0D /* ArrayExtensions.swift in Sources */,
 				1DDAA5DF26C9EFDC00104FBD /* CTWShoppingClothingItemTableViewCell.swift in Sources */,
 				1DDAA5B226C9EE2200104FBD /* UIViewExtensions.swift in Sources */,
+				1D0DEAC926D05FE700ABF47A /* CTWAssistantNavigationController.swift in Sources */,
 				1DDAA5DD26C9EFD400104FBD /* CTWLookCollectionViewCell.swift in Sources */,
 				1DDAA5A726C9ED1C00104FBD /* CTWGenieLooksViewController.swift in Sources */,
 			);

@@ -64,6 +64,7 @@ class CTWGenieContainerViewController: UIViewController {
     }
 
     @objc func close() {
+        let assistantController = navigationController 
         navigationController?.dismiss(animated: true)
     }
     
