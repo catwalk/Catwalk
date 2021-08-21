@@ -113,7 +113,7 @@ class CTWGenieShoppingListViewController: CTWGenieContainerViewController {
     @objc func sendToCart() {
         let assistantViewController = navigationController?.viewControllers[0] as? CTWGenieViewController
         assistantViewController?.delegate?.didReturnShoppingItems(skus: shoppingProducts?.map({ $0.sku ?? "" }) ?? [])
-        self.dismiss(animated: true)
+        self.navigationController?.dismiss(animated: true)
     }
 
 }
@@ -143,7 +143,7 @@ extension CTWGenieShoppingListViewController: UITableViewDelegate, UITableViewDa
         if shoppingMode == .size, let sku = shoppingProducts?[indexPath.row].sku {
             let assistantViewController = navigationController?.viewControllers[0] as? CTWGenieViewController
             assistantViewController?.delegate?.didReturnSingleItem(sku: sku)
-            self.dismiss(animated: true)
+            self.navigationController?.dismiss(animated: true)
         }
     }
 }

@@ -129,6 +129,18 @@ class CTWGenieViewController: CTWGenieContainerViewController {
         btnBack.isHidden = true
         btnClose.isHidden = true
         setupView()
+        setupSession()
+    }
+        
+    func setupSession() {
+        CTWNetworkManager.shared.fetchSessionInfo { (result: Result<CTWSession, CTWNetworkManager.APIServiceError>) in
+            switch result {
+                case .success(let session):
+                    GenieAPI.sessionId = session.id
+                case .failure(let error):
+                    print(error.localizedDescription)
+            }
+        }
     }
     
     func renderOptionsOnMainThread() {
@@ -262,7 +274,7 @@ class CTWGenieViewController: CTWGenieContainerViewController {
                     DispatchQueue.main.async { [weak self] in
                         loader.dismiss(animated: true) {
                             self?.delegate?.didReturnMultipleItems(skus: trendingSKUs)
-                            self?.dismiss(animated: true)
+                            self?.navigationController?.dismiss(animated: true)
                         }
                     }
                 case .failure(let error):
@@ -292,7 +304,7 @@ class CTWGenieViewController: CTWGenieContainerViewController {
                     DispatchQueue.main.async { [weak self] in
                         loader.dismiss(animated: true) {
                             self?.delegate?.didReturnMultipleItems(skus: similars)
-                            self?.dismiss(animated: true)
+                            self?.navigationController?.dismiss(animated: true)
                         }
                     }
                 case .failure(let error):
@@ -323,7 +335,7 @@ class CTWGenieViewController: CTWGenieContainerViewController {
                         loader.dismiss(animated: true) {
                             if(colorSKUs.count > 0) {
                                 self?.delegate?.didReturnMultipleItems(skus: colorSKUs)
-                                self?.dismiss(animated: true)
+                                self?.navigationController?.dismiss(animated: true)
                             } else {
                                 CTWAppUtils.showAlert(title: Customization.defaultErrorTitle, message: Customization.defaultErrorMessage, host: self)
                             }

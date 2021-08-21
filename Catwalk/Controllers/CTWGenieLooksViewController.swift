@@ -193,6 +193,6 @@ extension CTWGenieLooksViewController: CTWLookItemDelegate {
     func didSelectionItemLook(sku: String) {
         let assistantViewController = navigationController?.viewControllers[0] as? CTWGenieViewController
         assistantViewController?.delegate?.didReturnSingleItem(sku: sku)
-        self.dismiss(animated: true)
+        self.navigationController?.dismiss(animated: true)
     }
 }

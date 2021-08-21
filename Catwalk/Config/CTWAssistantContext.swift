@@ -17,7 +17,7 @@ public class CTWAssistantContext {
     
     public func presentAssistant() {
         let genieViewController = CTWGenieViewController(focusedSKU: focusedSKU)
-        let navigationViewController = UINavigationController(rootViewController: genieViewController)
+        let navigationViewController = CTWAssistantNavigationController(rootViewController: genieViewController)
         genieViewController.delegate = delegate
         navigationViewController.modalPresentationStyle = .overCurrentContext
         hostViewController?.present(navigationViewController, animated: true)
