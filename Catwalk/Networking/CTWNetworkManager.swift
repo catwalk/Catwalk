@@ -32,6 +32,23 @@ class CTWNetworkManager {
         fetchResources(urlRequest: request, completion: result)
     }
     
+    public func sendAttendanceReview(positive: Bool?, result: @escaping (Result<CTWDefaultResponse, APIServiceError>) -> Void) {
+        let url = URL(string: "\(GenieAPI.CTWLK_API_ROOT)/attendance/review")!
+        var request = createRequest(url: url, httpMethod: "POST")
+        
+        let parameters: [String: Any] = [
+            "positive": positive ?? false,
+        ]
+        
+        do {
+            request.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted)
+        } catch let error {
+            print(error.localizedDescription)
+        }
+        
+        fetchResources(urlRequest: request, completion: result)
+    }
+    
     public func checkIfSKUAvailable(sku: String, result: @escaping (Result<CTWSKUAvailability, APIServiceError>) -> Void) {
         let url = URL(string: "\(GenieAPI.CTWLK_API_ROOT)/sku/availability")!
         let request = createRequest(url: url, sku: sku)

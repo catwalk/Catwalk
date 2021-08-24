@@ -15,6 +15,8 @@
 		1D0DEAC126CEF9D700ABF47A /* CTWLookItemDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0DEAC026CEF9D700ABF47A /* CTWLookItemDelegate.swift */; };
 		1D0DEAC526CFFE9400ABF47A /* CTWSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0DEAC426CFFE9400ABF47A /* CTWSession.swift */; };
 		1D0DEAC926D05FE700ABF47A /* CTWAssistantNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0DEAC826D05FE700ABF47A /* CTWAssistantNavigationController.swift */; };
+		1D72477A26D5AC36003B9769 /* CTWChatAttendanceReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D72477926D5AC36003B9769 /* CTWChatAttendanceReviewTableViewCell.swift */; };
+		1D72477C26D5AC4E003B9769 /* CTWAttendanceReviewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D72477B26D5AC4E003B9769 /* CTWAttendanceReviewDelegate.swift */; };
 		1D95027A26C9D4C800EC7AB1 /* Catwalk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D95027026C9D4C700EC7AB1 /* Catwalk.framework */; };
 		1D95028126C9D4C800EC7AB1 /* Catwalk.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D95027326C9D4C700EC7AB1 /* Catwalk.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1DDAA57726C9E5F300104FBD /* genieBack.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DDAA57626C9E5F300104FBD /* genieBack.png */; };
@@ -79,6 +81,8 @@
 		1D0DEAC026CEF9D700ABF47A /* CTWLookItemDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTWLookItemDelegate.swift; sourceTree = "<group>"; };
 		1D0DEAC426CFFE9400ABF47A /* CTWSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTWSession.swift; sourceTree = "<group>"; };
 		1D0DEAC826D05FE700ABF47A /* CTWAssistantNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTWAssistantNavigationController.swift; sourceTree = "<group>"; };
+		1D72477926D5AC36003B9769 /* CTWChatAttendanceReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTWChatAttendanceReviewTableViewCell.swift; sourceTree = "<group>"; };
+		1D72477B26D5AC4E003B9769 /* CTWAttendanceReviewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTWAttendanceReviewDelegate.swift; sourceTree = "<group>"; };
 		1D95027026C9D4C700EC7AB1 /* Catwalk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Catwalk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D95027326C9D4C700EC7AB1 /* Catwalk.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Catwalk.h; sourceTree = "<group>"; };
 		1D95027426C9D4C700EC7AB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -161,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				1D0DEAC026CEF9D700ABF47A /* CTWLookItemDelegate.swift */,
+				1D72477B26D5AC4E003B9769 /* CTWAttendanceReviewDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -343,6 +348,7 @@
 				1DDAA5DA26C9EFCC00104FBD /* CTWChatUserMessageTableViewCell.swift */,
 				1DDAA5DC26C9EFD400104FBD /* CTWLookCollectionViewCell.swift */,
 				1DDAA5DE26C9EFDC00104FBD /* CTWShoppingClothingItemTableViewCell.swift */,
+				1D72477926D5AC36003B9769 /* CTWChatAttendanceReviewTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -516,6 +522,8 @@
 				1DDAA5D126C9EF6F00104FBD /* CTWGenieLooksViewModel.swift in Sources */,
 				1DDAA5BD26C9EE9B00104FBD /* CTWSKUAvailability.swift in Sources */,
 				1DDAA5B026C9EDE000104FBD /* UIColorExtensions.swift in Sources */,
+				1D72477C26D5AC4E003B9769 /* CTWAttendanceReviewDelegate.swift in Sources */,
+				1D72477A26D5AC36003B9769 /* CTWChatAttendanceReviewTableViewCell.swift in Sources */,
 				1DDAA5B726C9EE8000104FBD /* CTWClothing.swift in Sources */,
 				1DDAA5CE26C9EF4700104FBD /* CTWAppUtils.swift in Sources */,
 				1DDAA5CC26C9EF3D00104FBD /* Config.swift in Sources */,
