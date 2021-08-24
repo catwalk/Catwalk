@@ -1,20 +1,21 @@
 //
 //  CTWChatMessage.swift
-//  Catwalk
-//
-//  Created by CTWLK on 8/15/21.
 //  Copyright © 2021 CATWALK. All rights reserved.
 //
 
 enum CTWChatMessageType: Int, Decodable {
-    case PlainText
+    case PlainText = 1
     case Look
     case Similar
+    case AvailableColors
+    case AvailableSizes
+    case TrendingClothing
+    case Buy
     case Review
 }
 
 enum ChatMessageSender: Int, Decodable {
-    case User
+    case User = 1
     case Assistant
 }
 
