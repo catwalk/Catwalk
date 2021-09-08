@@ -1,5 +1,5 @@
 # Catwalk iOS SDK
-![Platform](https://img.shields.io/cocoapods/p/Catwalk) ![CocoaPods](https://img.shields.io/cocoapods/v/Catwalk?color=green) ![License](https://img.shields.io/cocoapods/l/Catwalk) ![Travis](https://img.shields.io/travis/com/catwalkhub/Catwalk)
+![Platform](https://img.shields.io/cocoapods/p/Catwalk) ![CocoaPods](https://img.shields.io/cocoapods/v/Catwalk?color=green) ![License](https://img.shields.io/cocoapods/l/Catwalk) ![Travis](https://img.shields.io/travis/com/catwalk/Catwalk)
 
 
 Catwalk's iOS SDK allows you to offer a virtual fashion assistant in your iOS app. We provide a handful of features to assist your customers and clients when navigating your aplication, such as creating looks, finding similar items, groupoing multiple skus into a single hub and more.
