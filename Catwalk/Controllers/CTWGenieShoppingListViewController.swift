@@ -32,9 +32,7 @@ class CTWGenieShoppingListViewController: CTWGenieContainerViewController {
     }
     
     private let cellIdentifier = "clothingCell"
-    
-    var shoppingProducts: [CTWShoppingProduct]?
-    
+        
     var genieShoppingListViewModel: CTWGenieShoppingListViewModel? {
         didSet {
             lbTotalPrice.text = genieShoppingListViewModel?.totalPrice
@@ -112,7 +110,7 @@ class CTWGenieShoppingListViewController: CTWGenieContainerViewController {
     
     @objc func sendToCart() {
         let assistantViewController = navigationController?.viewControllers[0] as? CTWGenieViewController
-        assistantViewController?.delegate?.didReturnShoppingItems(skus: shoppingProducts?.map({ $0.sku ?? "" }) ?? [])
+        assistantViewController?.delegate?.didReturnShoppingItems(skus: genieShoppingListViewModel?.shoppingProducts.map({ $0.sku ?? "" }) ?? [])
         self.navigationController?.dismiss(animated: true)
     }
 
@@ -140,7 +138,7 @@ extension CTWGenieShoppingListViewController: UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if shoppingMode == .size, let sku = shoppingProducts?[indexPath.row].sku {
+        if shoppingMode == .size, let sku = genieShoppingListViewModel?.shoppingProducts[safe: indexPath.row]?.sku {
             let assistantViewController = navigationController?.viewControllers[0] as? CTWGenieViewController
             assistantViewController?.delegate?.didReturnSingleItem(sku: sku)
             self.navigationController?.dismiss(animated: true)
@@ -161,9 +159,9 @@ extension CTWGenieShoppingListViewController: CTWShoppingClothingItemTableViewCe
 
 extension CTWGenieShoppingListViewController: CTWLKAssistantShoppingDelegate {
     func didChangeSizeForShoppingItem(productId: String, sku: String, identifier: String) {
-        if let index = shoppingProducts?.firstIndex(where: {$0.productId == productId}) {
-            shoppingProducts?[index].sku = sku
-            shoppingProducts?[index].identifier = identifier
+        if let index = genieShoppingListViewModel?.shoppingProducts.firstIndex(where: {$0.productId == productId}) {
+            genieShoppingListViewModel?.shoppingProducts[index].sku = sku
+            genieShoppingListViewModel?.shoppingProducts[index].identifier = identifier
         }
     }
 }

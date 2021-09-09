@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "Catwalk"
-  spec.version      = "0.9.8"
+  spec.version      = "0.9.9"
   spec.summary      = "Catwalk's CocoaPods library for you Fashion Virtual Assistant"
 
   spec.description  = <<-DESC
@@ -14,7 +14,7 @@ Pod::Spec.new do |spec|
   spec.source       = { :git => "https://github.com/catwalk/Catwalk.git", :tag => "#{spec.version}" }
 
   spec.source_files  = "Catwalk/**/*.{h,m,swift}"
-  spec.ios.deployment_target = "13.6"
+  spec.ios.deployment_target = "11.0"
   spec.swift_version = "4.2"
 
   spec.resources = "Catwalk/Resources/*.png"

@@ -10,22 +10,23 @@
 		1D09B82826CC4DA00040AB0D /* CTWGenieLooksViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D09B82726CC4DA00040AB0D /* CTWGenieLooksViewModelTests.swift */; };
 		1D09B82A26CC6BB40040AB0D /* CTWShoppingClothingViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D09B82926CC6BB40040AB0D /* CTWShoppingClothingViewModelTests.swift */; };
 		1D09B82C26CC87FC0040AB0D /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D09B82B26CC87FC0040AB0D /* ArrayExtensions.swift */; };
-		1D0DEABC26CDC2F400ABF47A /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 1D0DEABB26CDC2F400ABF47A /* SDWebImage */; };
 		1D0DEABE26CDC77E00ABF47A /* CTWGenieShoppingListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0DEABD26CDC77E00ABF47A /* CTWGenieShoppingListViewModel.swift */; };
 		1D0DEAC126CEF9D700ABF47A /* CTWLookItemDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0DEAC026CEF9D700ABF47A /* CTWLookItemDelegate.swift */; };
 		1D0DEAC526CFFE9400ABF47A /* CTWSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0DEAC426CFFE9400ABF47A /* CTWSession.swift */; };
 		1D0DEAC926D05FE700ABF47A /* CTWAssistantNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0DEAC826D05FE700ABF47A /* CTWAssistantNavigationController.swift */; };
+		1D1CA84126E97DB90086B229 /* CTWReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1CA84026E97DB90086B229 /* CTWReachability.swift */; };
 		1D72477A26D5AC36003B9769 /* CTWChatAttendanceReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D72477926D5AC36003B9769 /* CTWChatAttendanceReviewTableViewCell.swift */; };
 		1D72477C26D5AC4E003B9769 /* CTWAttendanceReviewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D72477B26D5AC4E003B9769 /* CTWAttendanceReviewDelegate.swift */; };
 		1D95027A26C9D4C800EC7AB1 /* Catwalk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D95027026C9D4C700EC7AB1 /* Catwalk.framework */; };
 		1D95028126C9D4C800EC7AB1 /* Catwalk.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D95027326C9D4C700EC7AB1 /* Catwalk.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1DA057A026EA69F400AF8D58 /* Catwalk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D95027026C9D4C700EC7AB1 /* Catwalk.framework */; };
+		1DA057A126EA69F400AF8D58 /* Catwalk.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1D95027026C9D4C700EC7AB1 /* Catwalk.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1DDAA57726C9E5F300104FBD /* genieBack.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DDAA57626C9E5F300104FBD /* genieBack.png */; };
 		1DDAA57926C9E5FF00104FBD /* genieClose.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DDAA57826C9E5FF00104FBD /* genieClose.png */; };
 		1DDAA57B26C9E60600104FBD /* genieInfo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DDAA57A26C9E60600104FBD /* genieInfo.png */; };
 		1DDAA57D26C9E60F00104FBD /* genieLike.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DDAA57C26C9E60F00104FBD /* genieLike.png */; };
 		1DDAA57F26C9E61500104FBD /* genieRemove.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DDAA57E26C9E61500104FBD /* genieRemove.png */; };
 		1DDAA58726C9E6DF00104FBD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDAA58626C9E6DF00104FBD /* AppDelegate.swift */; };
-		1DDAA58926C9E6DF00104FBD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDAA58826C9E6DF00104FBD /* SceneDelegate.swift */; };
 		1DDAA58B26C9E6DF00104FBD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDAA58A26C9E6DF00104FBD /* ViewController.swift */; };
 		1DDAA59026C9E6E300104FBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DDAA58F26C9E6E200104FBD /* Assets.xcassets */; };
 		1DDAA59326C9E6E300104FBD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DDAA59126C9E6E300104FBD /* LaunchScreen.storyboard */; };
@@ -71,7 +72,28 @@
 			remoteGlobalIDString = 1D95026F26C9D4C700EC7AB1;
 			remoteInfo = Catwalk;
 		};
+		1DA057A226EA69F400AF8D58 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1D95026726C9D4C700EC7AB1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1D95026F26C9D4C700EC7AB1;
+			remoteInfo = Catwalk;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1DA057A426EA69F400AF8D58 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1DA057A126EA69F400AF8D58 /* Catwalk.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1D09B82726CC4DA00040AB0D /* CTWGenieLooksViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTWGenieLooksViewModelTests.swift; sourceTree = "<group>"; };
@@ -81,6 +103,7 @@
 		1D0DEAC026CEF9D700ABF47A /* CTWLookItemDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTWLookItemDelegate.swift; sourceTree = "<group>"; };
 		1D0DEAC426CFFE9400ABF47A /* CTWSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTWSession.swift; sourceTree = "<group>"; };
 		1D0DEAC826D05FE700ABF47A /* CTWAssistantNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTWAssistantNavigationController.swift; sourceTree = "<group>"; };
+		1D1CA84026E97DB90086B229 /* CTWReachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTWReachability.swift; sourceTree = "<group>"; };
 		1D72477926D5AC36003B9769 /* CTWChatAttendanceReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTWChatAttendanceReviewTableViewCell.swift; sourceTree = "<group>"; };
 		1D72477B26D5AC4E003B9769 /* CTWAttendanceReviewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTWAttendanceReviewDelegate.swift; sourceTree = "<group>"; };
 		1D95027026C9D4C700EC7AB1 /* Catwalk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Catwalk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,7 +118,6 @@
 		1DDAA57E26C9E61500104FBD /* genieRemove.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = genieRemove.png; sourceTree = "<group>"; };
 		1DDAA58426C9E6DF00104FBD /* CatwalkExamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatwalkExamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DDAA58626C9E6DF00104FBD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1DDAA58826C9E6DF00104FBD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		1DDAA58A26C9E6DF00104FBD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1DDAA58F26C9E6E200104FBD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1DDAA59226C9E6E300104FBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -154,7 +176,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D0DEABC26CDC2F400ABF47A /* SDWebImage in Frameworks */,
+				1DA057A026EA69F400AF8D58 /* Catwalk.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,7 +258,6 @@
 			isa = PBXGroup;
 			children = (
 				1DDAA58626C9E6DF00104FBD /* AppDelegate.swift */,
-				1DDAA58826C9E6DF00104FBD /* SceneDelegate.swift */,
 				1DDAA58A26C9E6DF00104FBD /* ViewController.swift */,
 				1DDAA5C126C9EF1000104FBD /* Fonts */,
 				1DDAA58F26C9E6E200104FBD /* Assets.xcassets */,
@@ -299,6 +320,7 @@
 			isa = PBXGroup;
 			children = (
 				1DDAA5BF26C9EEE100104FBD /* CTWNetworkManager.swift */,
+				1D1CA84026E97DB90086B229 /* CTWReachability.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -420,14 +442,15 @@
 				1DDAA58026C9E6DF00104FBD /* Sources */,
 				1DDAA58126C9E6DF00104FBD /* Frameworks */,
 				1DDAA58226C9E6DF00104FBD /* Resources */,
+				1DA057A426EA69F400AF8D58 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				1DA057A326EA69F400AF8D58 /* PBXTargetDependency */,
 			);
 			name = CatwalkExamples;
 			packageProductDependencies = (
-				1D0DEABB26CDC2F400ABF47A /* SDWebImage */,
 			);
 			productName = CatwalkExamples;
 			productReference = 1DDAA58426C9E6DF00104FBD /* CatwalkExamples.app */;
@@ -522,6 +545,7 @@
 				1DDAA5D126C9EF6F00104FBD /* CTWGenieLooksViewModel.swift in Sources */,
 				1DDAA5BD26C9EE9B00104FBD /* CTWSKUAvailability.swift in Sources */,
 				1DDAA5B026C9EDE000104FBD /* UIColorExtensions.swift in Sources */,
+				1D1CA84126E97DB90086B229 /* CTWReachability.swift in Sources */,
 				1D72477C26D5AC4E003B9769 /* CTWAttendanceReviewDelegate.swift in Sources */,
 				1D72477A26D5AC36003B9769 /* CTWChatAttendanceReviewTableViewCell.swift in Sources */,
 				1DDAA5B726C9EE8000104FBD /* CTWClothing.swift in Sources */,
@@ -570,7 +594,6 @@
 			files = (
 				1DDAA58B26C9E6DF00104FBD /* ViewController.swift in Sources */,
 				1DDAA58726C9E6DF00104FBD /* AppDelegate.swift in Sources */,
-				1DDAA58926C9E6DF00104FBD /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -581,6 +604,11 @@
 			isa = PBXTargetDependency;
 			target = 1D95026F26C9D4C700EC7AB1 /* Catwalk */;
 			targetProxy = 1D95027B26C9D4C800EC7AB1 /* PBXContainerItemProxy */;
+		};
+		1DA057A326EA69F400AF8D58 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1D95026F26C9D4C700EC7AB1 /* Catwalk */;
+			targetProxy = 1DA057A226EA69F400AF8D58 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -730,6 +758,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Catwalk/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -738,9 +767,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mycatwalk.Catwalk;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -756,6 +786,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Catwalk/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -764,8 +795,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mycatwalk.Catwalk;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -814,6 +846,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M3754J9UWF;
 				INFOPLIST_FILE = CatwalkExamples/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -821,7 +854,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mycatwalk.CatwalkExamples;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -832,6 +865,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M3754J9UWF;
 				INFOPLIST_FILE = CatwalkExamples/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -839,7 +873,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mycatwalk.CatwalkExamples;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -896,11 +930,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		1D0DEABB26CDC2F400ABF47A /* SDWebImage */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 1DDAA5E026C9F0B300104FBD /* XCRemoteSwiftPackageReference "SDWebImage" */;
-			productName = SDWebImage;
-		};
 		1DDAA5E126C9F0B300104FBD /* SDWebImage */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 1DDAA5E026C9F0B300104FBD /* XCRemoteSwiftPackageReference "SDWebImage" */;

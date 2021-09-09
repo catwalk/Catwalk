@@ -119,34 +119,26 @@ class CTWGenieChatViewController: CTWGenieContainerViewController {
     func fetchResponse(for message: String) {
         let focusedSKU: String? = (navigationController?.viewControllers.first as? CTWGenieViewController)?.focusedSKU
         
-        let loader = CTWAppUtils.createLoader(title: "Carregando")
-//        self.present(loader, animated: true)
-        
         CTWNetworkManager.shared.fetchChatMessageResponse(for: message, with: focusedSKU) { (result: Result<CTWChatMessage, CTWNetworkManager.APIServiceError>) in
             switch result {
                 case .success(let chatResponse):
-                    DispatchQueue.main.async { [weak self] in
-                        loader.dismiss(animated: true) {
-                             self?.renderMessageResponse(message: chatResponse)
-                        }
-                    }
+                    self.renderMessageResponse(message: chatResponse)
                 case .failure(let error):
                     print(error.localizedDescription)
-                    DispatchQueue.main.async { [weak self] in
-                        loader.dismiss(animated: true) {
-                            CTWAppUtils.showAlert(title: Customization.defaultErrorTitle, message: Customization.defaultErrorMessage, host: self)
-                        }
-                    }
+                    CTWAppUtils.showAlert(title: Customization.defaultErrorTitle, message: Customization.defaultErrorMessage, host: self)
             }
         }
     }
     
     func renderMessageResponse(message: CTWChatMessage) {
-        self.messages.append(message)
-        self.chatTableView.reloadData()
-        let indexPath = IndexPath(item: (self.messages.count) - 1, section: 0)
-        self.chatTableView.scrollToRow(at: indexPath, at: UITableView.ScrollPosition.bottom, animated: true)
         
+        DispatchQueue.main.async {
+            self.messages.append(message)
+            self.chatTableView.reloadData()
+            let indexPath = IndexPath(item: (self.messages.count) - 1, section: 0)
+            self.chatTableView.scrollToRow(at: indexPath, at: UITableView.ScrollPosition.bottom, animated: true)
+        }
+       
         if let messageType = message.type, messageType == .Look {
             openLooks()
         }
