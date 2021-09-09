@@ -23,7 +23,7 @@ class CTWOfflineStateViewController: CTWGenieContainerViewController {
     lazy var btnDismiss: UIButton = {
         let button = UIButton(type: .system)
         button.setGenieStyle(title: "Ok")
-        button.addTarget(self, action: #selector(closeGenie), for: .touchUpInside)
+        button.addTarget(self, action: #selector(close), for: .touchUpInside)
         return button
     }()
         
@@ -44,7 +44,7 @@ class CTWOfflineStateViewController: CTWGenieContainerViewController {
         btnDismiss.centerX(inView: view, topAnchor: lbGenieTitle.bottomAnchor, paddingTop: 32)
     }
     
-    @objc func closeGenie() {
+    override func close() {
         self.dismiss(animated: true)
     }
     

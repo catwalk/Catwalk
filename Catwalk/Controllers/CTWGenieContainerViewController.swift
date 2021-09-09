@@ -20,8 +20,9 @@ class CTWGenieContainerViewController: UIViewController {
     lazy var btnBack: UIButton = {
         let button = UIButton(type: .system)
         let bundle = Bundle(for: CTWGenieContainerViewController.self)
-        let imageIcon = UIImage(named: "genieBack", in: bundle, with: nil)?.withTintColor(Customization.menuButtonBackgroundColor, renderingMode: .alwaysOriginal)
+        let imageIcon = UIImage(named: "genieBack", in: bundle, compatibleWith: nil)?.withRenderingMode(.alwaysTemplate)
         button.setImage(imageIcon, for: .normal)
+        button.tintColor = Customization.menuButtonBackgroundColor
         button.imageEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         button.addTarget(self, action: #selector(backAction), for: .touchUpInside)
         return button
@@ -30,8 +31,9 @@ class CTWGenieContainerViewController: UIViewController {
     lazy var btnClose: UIButton = {
         let button = UIButton(type: .system)
         let bundle = Bundle(for: CTWGenieContainerViewController.self)
-        let imageIcon = UIImage(named: "genieClose", in: bundle, with: nil)?.withTintColor(Customization.menuButtonBackgroundColor, renderingMode: .alwaysOriginal)
+        let imageIcon = UIImage(named: "genieClose", in: bundle, compatibleWith: nil)?.withRenderingMode(.alwaysTemplate)
         button.setImage(imageIcon, for: .normal)
+        button.tintColor = Customization.menuButtonBackgroundColor
         button.imageEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         button.addTarget(self, action: #selector(close), for: .touchUpInside)
         return button
@@ -54,17 +56,20 @@ class CTWGenieContainerViewController: UIViewController {
     }
     
     public func setLightMode() {
-        btnClose.setImage(btnClose.imageView?.image?.withTintColor(.black, renderingMode: .alwaysOriginal), for: .normal)
-        btnBack.setImage(btnBack.imageView?.image?.withTintColor(.black, renderingMode: .alwaysOriginal), for: .normal)
+        btnClose.setImage(btnClose.imageView?.image?.withRenderingMode(.alwaysTemplate), for: .normal)
+        btnClose.tintColor = .black
+        btnBack.setImage(btnBack.imageView?.image?.withRenderingMode(.alwaysTemplate), for: .normal)
+        btnBack.tintColor = .black
     }
     
     public func setDarkMode() {
-        btnClose.setImage(btnClose.imageView?.image?.withTintColor(Customization.menuButtonBackgroundColor, renderingMode: .alwaysOriginal), for: .normal)
-        btnBack.setImage(btnBack.imageView?.image?.withTintColor(Customization.menuButtonBackgroundColor, renderingMode: .alwaysOriginal), for: .normal)
+        btnClose.setImage(btnClose.imageView?.image?.withRenderingMode(.alwaysTemplate), for: .normal)
+        btnClose.tintColor = Customization.menuButtonBackgroundColor
+        btnBack.setImage(btnBack.imageView?.image?.withRenderingMode(.alwaysTemplate), for: .normal)
+        btnBack.tintColor = Customization.menuButtonBackgroundColor
     }
 
     @objc func close() {
-        let assistantController = navigationController 
         navigationController?.dismiss(animated: true)
     }
     

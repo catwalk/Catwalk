@@ -7,10 +7,11 @@
 //
 
 struct CTWGenieShoppingListViewModel {
-    var products: [CTWProduct] {
-        didSet {
-            shoppingProducts = products.map({ CTWShoppingProduct(productId: $0.productId, sku: $0.sizes?[0].sku, identifier: $0.sizes?[0].identifier)})
-        }
+    var products: [CTWProduct] = []
+    
+    init(products: [CTWProduct]) {
+        self.products = products
+        shoppingProducts = products.map({ CTWShoppingProduct(productId: $0.productId, sku: $0.sizes?[0].sku, identifier: $0.sizes?[0].identifier)})
     }
     
     var shoppingProducts: [CTWShoppingProduct] = []
@@ -39,5 +40,6 @@ struct CTWGenieShoppingListViewModel {
     mutating func removeProductByProductId(_ productId: String?) {
         guard let index = getProductIndex(by: productId) else { return }
         products.remove(at: index)
+        shoppingProducts.remove(at: index)
     }
 }

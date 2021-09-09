@@ -93,6 +93,9 @@ class CTWLookCollectionViewCell: UICollectionViewCell {
         view.btnContainer.addTarget(self, action: #selector(itemPressed), for: .touchUpInside)
         if let image = lookItem.product?.image, image != "" {
             view.imageView.sd_setImage(with: URL(string: image))
+            view.infoIcon.isHidden = false
+        } else {
+            view.infoIcon.isHidden = true
         }
         
         view.backgroundColor = .clear

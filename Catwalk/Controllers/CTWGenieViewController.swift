@@ -27,7 +27,6 @@ class CTWGenieViewController: CTWGenieContainerViewController {
     var mode: GenieMode = .general
     var loader: UIAlertController?
     
-    let monitor = NWPathMonitor()
     let queue = DispatchQueue(label: "InternetConnectionMonitor")
     
     var lbGenieTitle: UILabel = {
@@ -143,10 +142,8 @@ class CTWGenieViewController: CTWGenieContainerViewController {
         }
     }
     
-    func renderOptionsOnMainThread() {
-        DispatchQueue.main.async {
-            self.setupOptions()
-        }
+    func renderOptions() {
+        self.setupOptions()
     }
     
     func isFocusedSKUAvailable(sku: String?, checker: @escaping (Bool) -> Void) {
@@ -168,10 +165,9 @@ class CTWGenieViewController: CTWGenieContainerViewController {
     }
     
     private func closeLoader(completion: (() -> Void)?) {
-        DispatchQueue.main.sync {
-            [weak self] in
-            self?.loader?.dismiss(animated: true, completion: completion)
-            self?.loader = nil
+        DispatchQueue.main.async {
+            self.loader?.dismiss(animated: true, completion: completion)
+            self.loader = nil
         }
     }
    
@@ -188,32 +184,28 @@ class CTWGenieViewController: CTWGenieContainerViewController {
     }
     
     private func initializeOptions() {
-        monitor.pathUpdateHandler = { pathUpdateHandler in
-            if pathUpdateHandler.status == .satisfied {
-                if self.mode == .general {
-                    self.closeLoader {
-                        self.renderOptionsOnMainThread()
-                    }
-                } else {
-                    self.isFocusedSKUAvailable(sku: self.focusedSKU) { available in
-                        if available == false {
-                            self.mode = .general
-                            self.focusedSKU = nil
-                        }
-                        self.renderOptionsOnMainThread()
-                    }
+        if Reachability.isConnectedToNetwork() {
+            if self.mode == .general {
+                self.closeLoader {
+                    self.renderOptions()
                 }
             } else {
-                self.closeLoader {
-                    DispatchQueue.main.async {
-                        let offlineStateViewController = CTWOfflineStateViewController()
-                        self.navigationController?.pushViewController(offlineStateViewController, animated: false)
+                self.isFocusedSKUAvailable(sku: self.focusedSKU) { available in
+                    if available == false {
+                        self.mode = .general
+                        self.focusedSKU = nil
                     }
+                    self.renderOptions()
+                }
+            }
+        } else {
+            self.closeLoader {
+                DispatchQueue.main.async {
+                    let offlineStateViewController = CTWOfflineStateViewController()
+                    self.navigationController?.pushViewController(offlineStateViewController, animated: false)
                 }
             }
         }
-
-        monitor.start(queue: queue)
     }
     
     private func setupOptions() {

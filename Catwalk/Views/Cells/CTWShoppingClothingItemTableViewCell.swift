@@ -70,8 +70,9 @@ class CTWShoppingClothingItemTableViewCell: UITableViewCell {
     lazy var btnRemove: UIButton = {
         let button = UIButton(type: .system)
         let bundle = Bundle(for: CTWShoppingClothingItemTableViewCell.self)
-        let imageIcon = UIImage(named: "genieRemove", in: bundle, with: nil)?.withTintColor(.red, renderingMode: .alwaysOriginal)
+        let imageIcon = UIImage(named: "genieRemove", in: bundle, compatibleWith: nil)?.withRenderingMode(.alwaysTemplate)
         button.setImage(imageIcon, for: .normal)
+        button.tintColor = .red
         button.imageEdgeInsets = UIEdgeInsets(top: 15, left: 15, bottom: 15, right: 15)
         button.addTarget(self, action: #selector(removeItem), for: .touchUpInside)
         return button

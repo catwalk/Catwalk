@@ -53,8 +53,9 @@ class CTWGenieLooksViewController: CTWGenieContainerViewController {
     lazy var btnLikeLook: UIButton = {
         let button = UIButton(type: .system)
         let bundle = Bundle(for: CTWGenieLooksViewController.self)
-        let imageIcon = UIImage(named: "genieLike", in: bundle, with: nil)?.withTintColor(.gray, renderingMode: .alwaysOriginal)
+        let imageIcon = UIImage(named: "genieLike", in: bundle, compatibleWith: nil)?.withRenderingMode(.alwaysTemplate)
         button.setImage(imageIcon, for: .normal)
+        button.tintColor = .gray
         button.addTarget(self, action: #selector(likeLook), for: .touchUpInside)
         button.setDimensions(height: 50, width: 50)
         return button
@@ -150,7 +151,8 @@ class CTWGenieLooksViewController: CTWGenieContainerViewController {
     }
     
     func updateLikeButtonColor() {
-        btnLikeLook.setImage(btnLikeLook.imageView?.image?.withTintColor(genieLooksViewModel?.likedLookButtonColorForCurrentLook() ?? .gray), for: .normal)
+        btnLikeLook.setImage(btnLikeLook.imageView?.image?.withRenderingMode(.alwaysTemplate), for: .normal)
+        btnLikeLook.tintColor = genieLooksViewModel?.likedLookButtonColorForCurrentLook() ?? .gray
     }
 }
 
