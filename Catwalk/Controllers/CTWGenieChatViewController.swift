@@ -10,6 +10,8 @@ import UIKit
 
 class CTWGenieChatViewController: CTWGenieContainerViewController {
     
+    private var focusedSKU: String?
+    private var assistantViewController: CTWGenieViewController?
     private var messages: [CTWChatMessage] = []
     private var startingMessage: String?
     
@@ -68,6 +70,11 @@ class CTWGenieChatViewController: CTWGenieContainerViewController {
           
             // call the 'keyboardWillHide' function when the view controlelr receive notification that keyboard is going to be hidden
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        DispatchQueue.main.async {
+            self.assistantViewController = self.navigationController?.viewControllers.first as? CTWGenieViewController
+            self.focusedSKU = self.assistantViewController?.focusedSKU
+        }
         
         setupScreen()
     }
@@ -160,15 +167,18 @@ class CTWGenieChatViewController: CTWGenieContainerViewController {
     }
     
     func openLooks() {
-        let focusedSKU: String? = (navigationController?.viewControllers.first as? CTWGenieViewController)?.focusedSKU
-        let loader = CTWAppUtils.createLoader(title: "Carregando")
-        self.present(loader, animated: true)
+        var loader: UIAlertController?
+        DispatchQueue.main.async {
+            loader = CTWAppUtils.createLoader(title: "Carregando")
+            self.present(loader!, animated: true)
+        }
+        
         if let focusedSKU = focusedSKU {
             CTWNetworkManager.shared.fetchLooks(for: focusedSKU) { (result: Result<[CTWLook], CTWNetworkManager.APIServiceError>) in
                 switch result {
                     case .success(let looks):
                         DispatchQueue.main.async { [weak self] in
-                            loader.dismiss(animated: true) {
+                            loader?.dismiss(animated: true) {
                                 if(looks.count > 0){
                                     let looksViewController = CTWGenieLooksViewController()
                                     looksViewController.genieLooksViewModel = CTWGenieLooksViewModel(looks: looks)
@@ -179,7 +189,7 @@ class CTWGenieChatViewController: CTWGenieContainerViewController {
                     case .failure(let error):
                         print(error.localizedDescription)
                         DispatchQueue.main.async { [weak self] in
-                            loader.dismiss(animated: true) {
+                            loader?.dismiss(animated: true) {
                                 CTWAppUtils.showAlert(title: Customization.defaultErrorTitle, message: Customization.defaultErrorMessage, host: self)
                             }
                         }
@@ -190,7 +200,7 @@ class CTWGenieChatViewController: CTWGenieContainerViewController {
                 switch result {
                     case .success(let looks):
                         DispatchQueue.main.async { [weak self] in
-                            loader.dismiss(animated: true) {
+                            loader?.dismiss(animated: true) {
                                 if(looks.count > 0) {
                                     let looksViewController = CTWGenieLooksViewController()
                                     looksViewController.genieLooksViewModel = CTWGenieLooksViewModel(looks: looks)
@@ -203,7 +213,7 @@ class CTWGenieChatViewController: CTWGenieContainerViewController {
                     case .failure(let error):
                         print(error.localizedDescription)
                         DispatchQueue.main.async { [weak self] in
-                            loader.dismiss(animated: true) {
+                            loader?.dismiss(animated: true) {
                                 CTWAppUtils.showAlert(title: Customization.defaultErrorTitle, message: Customization.defaultErrorMessage, host: self)
                             }
                         }
@@ -213,24 +223,26 @@ class CTWGenieChatViewController: CTWGenieContainerViewController {
     }
     
     func fetchSimilarItems() {
-        guard let assistantViewController = navigationController?.viewControllers.first as? CTWGenieViewController else { return }
-        let loader = CTWAppUtils.createLoader(title: "Carregando")
-        self.present(loader, animated: true)
+        var loader: UIAlertController?
+        DispatchQueue.main.async {
+            loader = CTWAppUtils.createLoader(title: "Carregando")
+            self.present(loader!, animated: true)
+        }
         
-        if let focusedSKU = assistantViewController.focusedSKU {
+        if let focusedSKU = assistantViewController?.focusedSKU {
             CTWNetworkManager.shared.fetchSimilars(for: focusedSKU) { (result: Result<[String], CTWNetworkManager.APIServiceError>) in
                 switch result {
                     case .success(let similars):
                         DispatchQueue.main.async {
-                            loader.dismiss(animated: true) {
-                                assistantViewController.delegate?.didReturnMultipleItems(skus: similars)
-                                assistantViewController.navigationController?.dismiss(animated: true)
+                            loader?.dismiss(animated: true) {
+                                self.assistantViewController?.delegate?.didReturnMultipleItems(skus: similars)
+                                self.assistantViewController?.navigationController?.dismiss(animated: true)
                             }
                         }
                     case .failure(let error):
                         print(error.localizedDescription)
                         DispatchQueue.main.async { [weak self] in
-                            loader.dismiss(animated: true) {
+                            loader?.dismiss(animated: true) {
                                 CTWAppUtils.showAlert(title: Customization.defaultErrorTitle, message: Customization.defaultErrorMessage, host: self)
                             }
                         }
@@ -241,15 +253,15 @@ class CTWGenieChatViewController: CTWGenieContainerViewController {
                 switch result {
                     case .success(let trendingSKUs):
                         DispatchQueue.main.async {
-                            loader.dismiss(animated: true) {
-                                assistantViewController.delegate?.didReturnMultipleItems(skus: trendingSKUs)
-                                assistantViewController.navigationController?.dismiss(animated: true)
+                            loader?.dismiss(animated: true) {
+                                self.assistantViewController?.delegate?.didReturnMultipleItems(skus: trendingSKUs)
+                                self.assistantViewController?.navigationController?.dismiss(animated: true)
                             }
                         }
                     case .failure(let error):
                         print(error.localizedDescription)
                         DispatchQueue.main.async { [weak self] in
-                            loader.dismiss(animated: true) {
+                            loader?.dismiss(animated: true) {
                                 CTWAppUtils.showAlert(title: Customization.defaultErrorTitle, message: Customization.defaultErrorMessage, host: self)
                             }
                         }
@@ -259,19 +271,21 @@ class CTWGenieChatViewController: CTWGenieContainerViewController {
     }
     
     func fetchAvailableColors() {
-        guard let assistantViewController = navigationController?.viewControllers.first as? CTWGenieViewController else { return }
-        let loader = CTWAppUtils.createLoader(title: "Carregando")
-        self.present(loader, animated: true)
+        var loader: UIAlertController?
+        DispatchQueue.main.async {
+            loader = CTWAppUtils.createLoader(title: "Carregando")
+            self.present(loader!, animated: true)
+        }
         
-        if let focusedSKU = assistantViewController.focusedSKU {
+        if let focusedSKU = self.assistantViewController?.focusedSKU {
             CTWNetworkManager.shared.fetchAvailableColors(for: focusedSKU) { (result: Result<[String], CTWNetworkManager.APIServiceError>) in
                 switch result {
                     case .success(let colorSKUs):
                         DispatchQueue.main.async { [weak self] in
-                            loader.dismiss(animated: true) {
+                            loader?.dismiss(animated: true) {
                                 if(colorSKUs.count > 0) {
-                                    assistantViewController.delegate?.didReturnMultipleItems(skus: colorSKUs)
-                                    assistantViewController.navigationController?.dismiss(animated: true)
+                                    self?.assistantViewController?.delegate?.didReturnMultipleItems(skus: colorSKUs)
+                                    self?.assistantViewController?.navigationController?.dismiss(animated: true)
                                 } else {
                                     CTWAppUtils.showAlert(title: Customization.defaultErrorTitle, message: Customization.noColorsErrorMessage, host: self)
                                 }
@@ -281,7 +295,7 @@ class CTWGenieChatViewController: CTWGenieContainerViewController {
                     case .failure(let error):
                         print(error.localizedDescription)
                         DispatchQueue.main.async { [weak self] in
-                            loader.dismiss(animated: true) {
+                            loader?.dismiss(animated: true) {
                                 CTWAppUtils.showAlert(title: Customization.defaultErrorTitle, message: Customization.defaultErrorMessage, host: self)
                             }
                         }
@@ -291,23 +305,25 @@ class CTWGenieChatViewController: CTWGenieContainerViewController {
     }
     
     func fetchAvailableSizes() {
-        guard let assistantViewController = navigationController?.viewControllers.first as? CTWGenieViewController else { return }
-        let loader = CTWAppUtils.createLoader(title: "Carregando")
-        self.present(loader, animated: true)
+        var loader: UIAlertController?
+        DispatchQueue.main.async {
+            loader = CTWAppUtils.createLoader(title: "Carregando")
+            self.present(loader!, animated: true)
+        }
         
-        if let focusedSKU = assistantViewController.focusedSKU {
+        if let focusedSKU = assistantViewController?.focusedSKU {
             CTWNetworkManager.shared.fetchProductInfoBy(sku: focusedSKU) { (result: Result<CTWProduct, CTWNetworkManager.APIServiceError>) in
                 switch result {
                     case .success(let product):
                         DispatchQueue.main.async { [weak self] in
                             if let sizes = product.sizes, sizes.count > 0 {
-                                loader.dismiss(animated: true) {
+                                loader?.dismiss(animated: true) {
                                     let genieShoppingListViewController = CTWGenieShoppingListViewController()
                                     genieShoppingListViewController.genieShoppingListViewModel = CTWGenieShoppingListViewModel(products: sizes.map({ CTWProduct(headline: product.headline, productId: product.productId, image: product.image, price: product.price, sizes: [$0]) }))
                                     self?.navigationController?.pushViewController(genieShoppingListViewController, animated: true)
                                 }
                             } else {
-                                loader.dismiss(animated: true) {
+                                loader?.dismiss(animated: true) {
                                     CTWAppUtils.showAlert(title: Customization.defaultErrorTitle, message: Customization.noSizesErrorMessage, host: self)
                                 }
                             }
@@ -315,7 +331,7 @@ class CTWGenieChatViewController: CTWGenieContainerViewController {
                     case .failure(let error):
                         print(error.localizedDescription)
                         DispatchQueue.main.async { [weak self] in
-                            loader.dismiss(animated: true) {
+                            loader?.dismiss(animated: true) {
                                 CTWAppUtils.showAlert(title: Customization.defaultErrorTitle, message: Customization.defaultErrorMessage, host: self)
                             }
                         }
@@ -325,23 +341,25 @@ class CTWGenieChatViewController: CTWGenieContainerViewController {
     }
     
     func fetchTrendingClothing() {
-        guard let assistantViewController = navigationController?.viewControllers.first as? CTWGenieViewController else { return }
-        let loader = CTWAppUtils.createLoader(title: "Carregando")
-        self.present(loader, animated: true)
+        var loader: UIAlertController?
+        DispatchQueue.main.async {
+            loader = CTWAppUtils.createLoader(title: "Carregando")
+            self.present(loader!, animated: true)
+        }
         
         CTWNetworkManager.shared.fetchTrendingSKUs { (result: Result<[String], CTWNetworkManager.APIServiceError>) in
             switch result {
                 case .success(let trendingSKUs):
                     DispatchQueue.main.async {
-                        loader.dismiss(animated: true) {
-                            assistantViewController.delegate?.didReturnMultipleItems(skus: trendingSKUs)
-                            assistantViewController.navigationController?.dismiss(animated: true)
+                        loader?.dismiss(animated: true) { [weak self] in
+                            self?.assistantViewController?.delegate?.didReturnMultipleItems(skus: trendingSKUs)
+                            self?.assistantViewController?.navigationController?.dismiss(animated: true)
                         }
                     }
                 case .failure(let error):
                     print(error.localizedDescription)
                     DispatchQueue.main.async { [weak self] in
-                        loader.dismiss(animated: true) {
+                        loader?.dismiss(animated: true) {
                             CTWAppUtils.showAlert(title: Customization.defaultErrorTitle, message: Customization.defaultErrorMessage, host: self)
                         }
                     }
