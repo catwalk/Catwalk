@@ -91,7 +91,7 @@ class CTWShoppingClothingItemTableViewCell: UITableViewCell {
     
     func setupCellUI() {
         [ivClothing, lbHeadline, lbPrice, tfSize, btnRemove].forEach { itemView in
-            addSubview(itemView)
+            contentView.addSubview(itemView)
         }
         
         lbHeadline.anchor(top: ivClothing.topAnchor, left: ivClothing.rightAnchor, right: rightAnchor, paddingLeft: 16, paddingRight: 64)

@@ -33,7 +33,7 @@ class CTWLookContainerView: UIView {
         let bundle = Bundle(for: CTWLookContainerView.self)
         let imageIcon = UIImage(named: "genieInfo", in: bundle, compatibleWith: nil)?.withRenderingMode(.alwaysTemplate)
         button.setImage(imageIcon, for: .normal)
-        button.tintColor = .LightGrey
+        button.tintColor = .gray
         button.imageEdgeInsets = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
         return button
     }()
@@ -49,7 +49,7 @@ class CTWLookContainerView: UIView {
         addSubview(btnContainer)
         
         imageView.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 8, paddingLeft: 8, paddingBottom: 8, paddingRight: 8)
-        infoIcon.anchor(top: imageView.topAnchor, left: imageView.leftAnchor)
+        infoIcon.anchor(top: imageView.topAnchor, left: imageView.leftAnchor, paddingTop: -8, paddingLeft: -8)
         btnContainer.fillSuperview()
     }
     

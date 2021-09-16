@@ -44,6 +44,8 @@ class CTWGenieLooksViewController: CTWGenieContainerViewController {
     
     lazy var btnBuyLook: UIButton = {
         let button = UIButton(type: .system)
+        button.titleLabel?.minimumScaleFactor = 0.5
+        button.titleLabel?.adjustsFontSizeToFitWidth = true
         button.setGenieStyle(title: "personalize e compre", fontColor: Customization.generalButtonFontColor)
         button.addTarget(self, action: #selector(buyLook), for: .touchUpInside)
         button.backgroundColor = Customization.generalButtonBackgroundColor

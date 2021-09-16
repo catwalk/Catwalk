@@ -54,7 +54,7 @@ class CTWLookCollectionViewCell: UICollectionViewCell {
         backgroundColor = .white
         
         [lookContainer].forEach { viewItem in
-            addSubview(viewItem)
+            contentView.addSubview(viewItem)
         }
         
         leftColumn.translatesAutoresizingMaskIntoConstraints = false
