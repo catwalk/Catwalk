@@ -67,7 +67,7 @@ class CTWNetworkManager {
         fetchResources(urlRequest: request, completion: result)
     }
     
-    public func availableColors(for sku: String, result: @escaping (Result<[CTWProduct], APIServiceError>) -> Void) {
+    public func availableColors(for sku: String, result: @escaping (Result<[String], APIServiceError>) -> Void) {
         let url = URL(string: "\(GenieAPI.CTWLK_API_ROOT)/availableColors")!
         let request = createRequest(url: url, sku: sku)
         fetchResources(urlRequest: request, completion: result)

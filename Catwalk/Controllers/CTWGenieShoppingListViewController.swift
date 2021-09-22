@@ -112,6 +112,15 @@ class CTWGenieShoppingListViewController: CTWGenieContainerViewController {
         clothesTableView.reloadData()
     }
     
+    func getScreenTitle() -> String {
+        switch shoppingMode {
+            case .look:
+                return "Escolha seus tamanhos"
+            case .size:
+                return "Escolha seu tamanho"
+        }
+    }
+    
     @objc func sendToCart() {
         let assistantViewController = navigationController?.viewControllers[0] as? CTWGenieViewController
         assistantViewController?.delegate?.didReturnShoppingItems(skus: genieShoppingListViewModel?.shoppingProducts.map({ $0.sku ?? "" }) ?? [])
