@@ -37,8 +37,15 @@ struct CTWShoppingClothingViewModel {
         return "Tamanho \(sizeIdentifier)"
     }
     
-    func updateSize(at index: Int) {
+    func currentTextSize() -> String {
+        let index = product.sizes?.firstIndex(where: {$0.sku == product.chosenSKU})
+        guard let sizeIdentifier = product.sizes?[safe: index ?? 0]?.identifier else { return "" }
+        return "Tamanho \(sizeIdentifier)"
+    }
+    
+    mutating func updateSize(at index: Int) {
         if let productId = product.productId, let sku = product.sizes?[index].sku, let identifier = product.sizes?[index].identifier {
+            product.chosenSKU = sku
             delegate?.didChangeSizeForShoppingItem(productId: productId, sku: sku, identifier: identifier)
         }
     }
