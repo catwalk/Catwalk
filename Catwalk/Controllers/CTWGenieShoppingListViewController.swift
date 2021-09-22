@@ -33,12 +33,7 @@ class CTWGenieShoppingListViewController: CTWGenieContainerViewController {
     
     private let cellIdentifier = "clothingCell"
         
-    var genieShoppingListViewModel: CTWGenieShoppingListViewModel? {
-        didSet {
-            lbTotalPrice.text = genieShoppingListViewModel?.totalPrice
-            clothesTableView.reloadData()
-        }
-    }
+    var genieShoppingListViewModel: CTWGenieShoppingListViewModel?
     
     var priceInfoStackView: UIStackView = {
         let stackView = UIStackView()
@@ -97,15 +92,24 @@ class CTWGenieShoppingListViewController: CTWGenieContainerViewController {
         
         priceInfoStackView.addArrangedSubview(divider)
         priceInfoStackView.addArrangedSubview(lbTotalPrice)
-        
-        [clothesTableView, priceInfoStackView, btnSendToCart].forEach { itemView in
+            
+        [clothesTableView, priceInfoStackView].forEach { itemView in
             view.addSubview(itemView)
         }
         
         clothesTableView.anchor(top: btnClose.bottomAnchor, left: view.leftAnchor, bottom: priceInfoStackView.topAnchor, right: view.rightAnchor, paddingTop: 16, paddingLeft: 20, paddingBottom: 20, paddingRight: 20)
-        priceInfoStackView.anchor(left: view.safeAreaLayoutGuide.leftAnchor, bottom: btnSendToCart.topAnchor, right: view.safeAreaLayoutGuide.rightAnchor, paddingLeft: 40, paddingBottom: 20, paddingRight: 40)
-        btnSendToCart.centerX(inView: view)
-        btnSendToCart.anchor(bottom: view.safeAreaLayoutGuide.bottomAnchor, paddingBottom: 32)
+        
+        if shoppingMode == .look {
+            view.addSubview(btnSendToCart)
+            priceInfoStackView.anchor(left: view.safeAreaLayoutGuide.leftAnchor, bottom: btnSendToCart.topAnchor, right: view.safeAreaLayoutGuide.rightAnchor, paddingLeft: 40, paddingBottom: 20, paddingRight: 40)
+            btnSendToCart.centerX(inView: view)
+            btnSendToCart.anchor(bottom: view.safeAreaLayoutGuide.bottomAnchor, paddingBottom: 32)
+        } else {
+            priceInfoStackView.anchor(left: view.safeAreaLayoutGuide.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.safeAreaLayoutGuide.rightAnchor, paddingLeft: 40, paddingBottom: 32, paddingRight: 40)
+        }
+        
+        lbTotalPrice.text = genieShoppingListViewModel?.totalPrice
+        clothesTableView.reloadData()
     }
     
     @objc func sendToCart() {
@@ -160,6 +164,7 @@ extension CTWGenieShoppingListViewController: CTWShoppingClothingItemTableViewCe
 extension CTWGenieShoppingListViewController: CTWLKAssistantShoppingDelegate {
     func didChangeSizeForShoppingItem(productId: String, sku: String, identifier: String) {
         if let index = genieShoppingListViewModel?.shoppingProducts.firstIndex(where: {$0.productId == productId}) {
+            genieShoppingListViewModel?.products[index].chosenSKU = sku
             genieShoppingListViewModel?.shoppingProducts[index].sku = sku
             genieShoppingListViewModel?.shoppingProducts[index].identifier = identifier
         }

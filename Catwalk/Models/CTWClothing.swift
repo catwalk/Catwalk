@@ -13,6 +13,7 @@ struct CTWProduct: Decodable {
     var sku: String?
     var price: CTWPrice?
     var sizes: [CTWSize]?
+    var chosenSKU: String?
 }
 
 struct CTWShoppingProduct {

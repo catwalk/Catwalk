@@ -34,7 +34,7 @@ class CTWShoppingClothingItemTableViewCell: UITableViewCell {
             lbHeadline.text = shoppingClothingViewModel?.headline
             lbPrice.text = shoppingClothingViewModel?.currentPrice
             ivClothing.sd_setImage(with: shoppingClothingViewModel?.imageURL)
-            tfSize.text = shoppingClothingViewModel?.textForSizeAt(index: 0)
+            tfSize.text = shoppingClothingViewModel?.currentTextSize()
             self.pickerView.reloadAllComponents()
         }
     }
