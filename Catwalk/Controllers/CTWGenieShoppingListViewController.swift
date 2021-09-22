@@ -84,7 +84,7 @@ class CTWGenieShoppingListViewController: CTWGenieContainerViewController {
     
     func setupUI() {
         setLightMode()
-        lbTitle.text = "Escolha seus tamanhos"
+        lbTitle.text = shoppingMode == .look ? "Escolha seus tamanhos" : "Escolha seu tamanho"
         lbTitle.textColor = .black
         btnBack.setTitleColor(.black, for: .normal)
         btnClose.setTitleColor(.black, for: .normal)
@@ -144,7 +144,7 @@ extension CTWGenieShoppingListViewController: UITableViewDelegate, UITableViewDa
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if shoppingMode == .size, let sku = genieShoppingListViewModel?.shoppingProducts[safe: indexPath.row]?.sku {
             let assistantViewController = navigationController?.viewControllers[0] as? CTWGenieViewController
-            assistantViewController?.delegate?.didReturnSingleItem(sku: sku)
+            assistantViewController?.delegate?.didReturnShoppingItems(skus: [sku])
             self.navigationController?.dismiss(animated: true)
         }
     }
