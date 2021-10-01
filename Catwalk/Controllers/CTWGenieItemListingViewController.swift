@@ -54,7 +54,6 @@ class CTWGenieItemListingViewController: CTWGenieContainerViewController {
             self.itemsTableView.reloadData()
         }
     }
-
 }
 
 extension CTWGenieItemListingViewController: UITableViewDelegate, UITableViewDataSource {
