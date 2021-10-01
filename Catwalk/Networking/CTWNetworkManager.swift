@@ -73,8 +73,18 @@ class CTWNetworkManager {
         fetchResources(urlRequest: request, completion: result)
     }
     
-    public func fetchProductsInfo(for productIds: [String], result: @escaping (Result<[CTWProduct], APIServiceError>) -> Void) {
-        let url = URL(string: "\(GenieAPI.CTWLK_API_ROOT)/productsInfo?productIds=\(productIds.joined(separator: ","))")!
+    public func fetchProductsInfo(productIds: [String]? = nil, skus: [String]? = nil, result: @escaping (Result<[CTWProduct], APIServiceError>) -> Void) {
+        var urlString = "\(GenieAPI.CTWLK_API_ROOT)/productsInfo"
+        
+        if let productIds = productIds {
+            urlString += "?productIds=\(productIds.joined(separator: ","))"
+        }
+        
+        if let skus = skus {
+            urlString += "?skus=\(skus.joined(separator: ","))"
+        }
+        
+        let url = URL(string: urlString)!
         let request = createRequest(url: url)
         fetchResources(urlRequest: request, completion: result)
     }

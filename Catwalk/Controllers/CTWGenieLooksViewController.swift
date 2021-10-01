@@ -104,7 +104,7 @@ class CTWGenieLooksViewController: CTWGenieContainerViewController {
             let loader = CTWAppUtils.createLoader(title: "Carregando")
             self.present(loader, animated: true)
             
-            CTWNetworkManager.shared.fetchProductsInfo(for: productIds) { (result: Result<[CTWProduct], CTWNetworkManager.APIServiceError>) in
+            CTWNetworkManager.shared.fetchProductsInfo(productIds: productIds) { (result: Result<[CTWProduct], CTWNetworkManager.APIServiceError>) in
                 switch result {
                     case .success(let products):
                         DispatchQueue.main.async { [weak self] in

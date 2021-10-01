@@ -50,7 +50,7 @@ class CTWShoppingClothingItemTableViewCell: UITableViewCell {
     var lbHeadline: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: Customization.boldFontName, size: 16)
-        label.numberOfLines = 2
+        label.numberOfLines = 3
         return label
     }()
     
@@ -99,7 +99,7 @@ class CTWShoppingClothingItemTableViewCell: UITableViewCell {
         lbPrice.anchor(top: lbHeadline.bottomAnchor, right: rightAnchor, paddingTop: 8, paddingRight: 16)
         ivClothing.centerY(inView: self)
         ivClothing.anchor(left: leftAnchor, paddingLeft: 8)
-        ivClothing.setDimensions(height: 150, width: 125)
+        ivClothing.setDimensions(height: 175, width: 125)
         
         tfSize.anchor(left: ivClothing.rightAnchor, bottom: ivClothing.bottomAnchor, right: rightAnchor, paddingLeft: 20, paddingRight: 20)
         tfSize.setHeight(40)

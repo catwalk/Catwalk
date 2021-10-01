@@ -48,6 +48,7 @@ class CTWGenieShoppingListViewController: CTWGenieContainerViewController {
         let tableView = UITableView()
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.separatorStyle = .none
         tableView.register(CTWShoppingClothingItemTableViewCell.self, forCellReuseIdentifier: cellIdentifier)
         tableView.tableFooterView = UIView(frame: CGRect.zero)
         return tableView

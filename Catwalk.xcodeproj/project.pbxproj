@@ -10,13 +10,26 @@
 		1D09B82826CC4DA00040AB0D /* CTWGenieLooksViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D09B82726CC4DA00040AB0D /* CTWGenieLooksViewModelTests.swift */; };
 		1D09B82A26CC6BB40040AB0D /* CTWShoppingClothingViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D09B82926CC6BB40040AB0D /* CTWShoppingClothingViewModelTests.swift */; };
 		1D09B82C26CC87FC0040AB0D /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D09B82B26CC87FC0040AB0D /* ArrayExtensions.swift */; };
-		1D0DEABE26CDC77E00ABF47A /* CTWGenieShoppingListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0DEABD26CDC77E00ABF47A /* CTWGenieShoppingListViewModel.swift */; };
 		1D0DEAC126CEF9D700ABF47A /* CTWLookItemDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0DEAC026CEF9D700ABF47A /* CTWLookItemDelegate.swift */; };
 		1D0DEAC526CFFE9400ABF47A /* CTWSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0DEAC426CFFE9400ABF47A /* CTWSession.swift */; };
 		1D0DEAC926D05FE700ABF47A /* CTWAssistantNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0DEAC826D05FE700ABF47A /* CTWAssistantNavigationController.swift */; };
+		1D1557C52706209F00F80484 /* CTWClothingItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1557C42706209F00F80484 /* CTWClothingItemTableViewCell.swift */; };
+		1D1557CB27065CEA00F80484 /* Greycliff-CF-RegularOblique.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1D1557C727065CEA00F80484 /* Greycliff-CF-RegularOblique.ttf */; };
+		1D1557CC27065CEA00F80484 /* Greycliff-CF-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1D1557C827065CEA00F80484 /* Greycliff-CF-Regular.ttf */; };
+		1D1557CD27065CEA00F80484 /* Greycliff-CF-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1D1557C927065CEA00F80484 /* Greycliff-CF-Light.ttf */; };
+		1D1557CE27065CEA00F80484 /* GreycliffCF-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1D1557CA27065CEA00F80484 /* GreycliffCF-Bold.ttf */; };
 		1D1CA84126E97DB90086B229 /* CTWReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1CA84026E97DB90086B229 /* CTWReachability.swift */; };
+		1D1D72AF26FBB60900C68695 /* CTWGenieShoppingListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1D72AE26FBB60900C68695 /* CTWGenieShoppingListViewModel.swift */; };
 		1D72477A26D5AC36003B9769 /* CTWChatAttendanceReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D72477926D5AC36003B9769 /* CTWChatAttendanceReviewTableViewCell.swift */; };
 		1D72477C26D5AC4E003B9769 /* CTWAttendanceReviewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D72477B26D5AC4E003B9769 /* CTWAttendanceReviewDelegate.swift */; };
+		1D788225270525250064D93B /* CTWGenieItemListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D788224270525250064D93B /* CTWGenieItemListingViewController.swift */; };
+		1D92F0E026F3985400BBEF17 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D92F0DF26F3985400BBEF17 /* AppDelegate.swift */; };
+		1D92F0E226F3985400BBEF17 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D92F0E126F3985400BBEF17 /* SceneDelegate.swift */; };
+		1D92F0E426F3985400BBEF17 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D92F0E326F3985400BBEF17 /* ViewController.swift */; };
+		1D92F0E926F3985B00BBEF17 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D92F0E826F3985B00BBEF17 /* Assets.xcassets */; };
+		1D92F0EC26F3985B00BBEF17 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D92F0EA26F3985B00BBEF17 /* LaunchScreen.storyboard */; };
+		1D92F0F126F398DD00BBEF17 /* Catwalk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D95027026C9D4C700EC7AB1 /* Catwalk.framework */; };
+		1D92F0F226F398DD00BBEF17 /* Catwalk.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1D95027026C9D4C700EC7AB1 /* Catwalk.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1D95027A26C9D4C800EC7AB1 /* Catwalk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D95027026C9D4C700EC7AB1 /* Catwalk.framework */; };
 		1D95028126C9D4C800EC7AB1 /* Catwalk.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D95027326C9D4C700EC7AB1 /* Catwalk.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1DA057A026EA69F400AF8D58 /* Catwalk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D95027026C9D4C700EC7AB1 /* Catwalk.framework */; };
@@ -65,6 +78,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		1D92F0F326F398DD00BBEF17 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1D95026726C9D4C700EC7AB1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1D95026F26C9D4C700EC7AB1;
+			remoteInfo = Catwalk;
+		};
 		1D95027B26C9D4C800EC7AB1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1D95026726C9D4C700EC7AB1 /* Project object */;
@@ -82,6 +102,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		1D92F0F526F398DD00BBEF17 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1D92F0F226F398DD00BBEF17 /* Catwalk.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1DA057A426EA69F400AF8D58 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -99,13 +130,26 @@
 		1D09B82726CC4DA00040AB0D /* CTWGenieLooksViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTWGenieLooksViewModelTests.swift; sourceTree = "<group>"; };
 		1D09B82926CC6BB40040AB0D /* CTWShoppingClothingViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTWShoppingClothingViewModelTests.swift; sourceTree = "<group>"; };
 		1D09B82B26CC87FC0040AB0D /* ArrayExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
-		1D0DEABD26CDC77E00ABF47A /* CTWGenieShoppingListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTWGenieShoppingListViewModel.swift; sourceTree = "<group>"; };
 		1D0DEAC026CEF9D700ABF47A /* CTWLookItemDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTWLookItemDelegate.swift; sourceTree = "<group>"; };
 		1D0DEAC426CFFE9400ABF47A /* CTWSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTWSession.swift; sourceTree = "<group>"; };
 		1D0DEAC826D05FE700ABF47A /* CTWAssistantNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTWAssistantNavigationController.swift; sourceTree = "<group>"; };
+		1D1557C42706209F00F80484 /* CTWClothingItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTWClothingItemTableViewCell.swift; sourceTree = "<group>"; };
+		1D1557C727065CEA00F80484 /* Greycliff-CF-RegularOblique.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Greycliff-CF-RegularOblique.ttf"; sourceTree = "<group>"; };
+		1D1557C827065CEA00F80484 /* Greycliff-CF-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Greycliff-CF-Regular.ttf"; sourceTree = "<group>"; };
+		1D1557C927065CEA00F80484 /* Greycliff-CF-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Greycliff-CF-Light.ttf"; sourceTree = "<group>"; };
+		1D1557CA27065CEA00F80484 /* GreycliffCF-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GreycliffCF-Bold.ttf"; sourceTree = "<group>"; };
 		1D1CA84026E97DB90086B229 /* CTWReachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTWReachability.swift; sourceTree = "<group>"; };
+		1D1D72AE26FBB60900C68695 /* CTWGenieShoppingListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CTWGenieShoppingListViewModel.swift; sourceTree = "<group>"; };
 		1D72477926D5AC36003B9769 /* CTWChatAttendanceReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTWChatAttendanceReviewTableViewCell.swift; sourceTree = "<group>"; };
 		1D72477B26D5AC4E003B9769 /* CTWAttendanceReviewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTWAttendanceReviewDelegate.swift; sourceTree = "<group>"; };
+		1D788224270525250064D93B /* CTWGenieItemListingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTWGenieItemListingViewController.swift; sourceTree = "<group>"; };
+		1D92F0DD26F3985400BBEF17 /* CatwalkExamplesWithScene.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatwalkExamplesWithScene.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D92F0DF26F3985400BBEF17 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1D92F0E126F3985400BBEF17 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		1D92F0E326F3985400BBEF17 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1D92F0E826F3985B00BBEF17 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1D92F0EB26F3985B00BBEF17 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1D92F0ED26F3985B00BBEF17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1D95027026C9D4C700EC7AB1 /* Catwalk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Catwalk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D95027326C9D4C700EC7AB1 /* Catwalk.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Catwalk.h; sourceTree = "<group>"; };
 		1D95027426C9D4C700EC7AB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -156,6 +200,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		1D92F0DA26F3985400BBEF17 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D92F0F126F398DD00BBEF17 /* Catwalk.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1D95026D26C9D4C700EC7AB1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -192,12 +244,38 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		1D1557C627065C9700F80484 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				1D1557C927065CEA00F80484 /* Greycliff-CF-Light.ttf */,
+				1D1557C827065CEA00F80484 /* Greycliff-CF-Regular.ttf */,
+				1D1557C727065CEA00F80484 /* Greycliff-CF-RegularOblique.ttf */,
+				1D1557CA27065CEA00F80484 /* GreycliffCF-Bold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		1D92F0DE26F3985400BBEF17 /* CatwalkExamplesWithScene */ = {
+			isa = PBXGroup;
+			children = (
+				1D1557C627065C9700F80484 /* Fonts */,
+				1D92F0DF26F3985400BBEF17 /* AppDelegate.swift */,
+				1D92F0E126F3985400BBEF17 /* SceneDelegate.swift */,
+				1D92F0E326F3985400BBEF17 /* ViewController.swift */,
+				1D92F0E826F3985B00BBEF17 /* Assets.xcassets */,
+				1D92F0EA26F3985B00BBEF17 /* LaunchScreen.storyboard */,
+				1D92F0ED26F3985B00BBEF17 /* Info.plist */,
+			);
+			path = CatwalkExamplesWithScene;
+			sourceTree = "<group>";
+		};
 		1D95026626C9D4C700EC7AB1 = {
 			isa = PBXGroup;
 			children = (
 				1D95027226C9D4C700EC7AB1 /* Catwalk */,
 				1D95027D26C9D4C800EC7AB1 /* CatwalkTests */,
 				1DDAA58526C9E6DF00104FBD /* CatwalkExamples */,
+				1D92F0DE26F3985400BBEF17 /* CatwalkExamplesWithScene */,
 				1D95027126C9D4C700EC7AB1 /* Products */,
 				1DDAA5E326C9F16700104FBD /* Frameworks */,
 			);
@@ -209,6 +287,7 @@
 				1D95027026C9D4C700EC7AB1 /* Catwalk.framework */,
 				1D95027926C9D4C800EC7AB1 /* CatwalkTests.xctest */,
 				1DDAA58426C9E6DF00104FBD /* CatwalkExamples.app */,
+				1D92F0DD26F3985400BBEF17 /* CatwalkExamplesWithScene.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -288,6 +367,7 @@
 				1DDAA5A826C9ED2600104FBD /* CTWGenieShoppingListViewController.swift */,
 				1DDAA5AA26C9ED3400104FBD /* CTWOfflineStateViewController.swift */,
 				1D0DEAC826D05FE700ABF47A /* CTWAssistantNavigationController.swift */,
+				1D788224270525250064D93B /* CTWGenieItemListingViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -347,9 +427,9 @@
 		1DDAA5CF26C9EF5D00104FBD /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				1D1D72AE26FBB60900C68695 /* CTWGenieShoppingListViewModel.swift */,
 				1DDAA5D026C9EF6F00104FBD /* CTWGenieLooksViewModel.swift */,
 				1DDAA5D226C9EF7900104FBD /* CTWShoppingClothingViewModel.swift */,
-				1D0DEABD26CDC77E00ABF47A /* CTWGenieShoppingListViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -371,6 +451,7 @@
 				1DDAA5DC26C9EFD400104FBD /* CTWLookCollectionViewCell.swift */,
 				1DDAA5DE26C9EFDC00104FBD /* CTWShoppingClothingItemTableViewCell.swift */,
 				1D72477926D5AC36003B9769 /* CTWChatAttendanceReviewTableViewCell.swift */,
+				1D1557C42706209F00F80484 /* CTWClothingItemTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -396,6 +477,25 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		1D92F0DC26F3985400BBEF17 /* CatwalkExamplesWithScene */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D92F0F026F3985B00BBEF17 /* Build configuration list for PBXNativeTarget "CatwalkExamplesWithScene" */;
+			buildPhases = (
+				1D92F0D926F3985400BBEF17 /* Sources */,
+				1D92F0DA26F3985400BBEF17 /* Frameworks */,
+				1D92F0DB26F3985400BBEF17 /* Resources */,
+				1D92F0F526F398DD00BBEF17 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1D92F0F426F398DD00BBEF17 /* PBXTargetDependency */,
+			);
+			name = CatwalkExamplesWithScene;
+			productName = CatwalkExamplesWithScene;
+			productReference = 1D92F0DD26F3985400BBEF17 /* CatwalkExamplesWithScene.app */;
+			productType = "com.apple.product-type.application";
+		};
 		1D95026F26C9D4C700EC7AB1 /* Catwalk */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1D95028426C9D4C800EC7AB1 /* Build configuration list for PBXNativeTarget "Catwalk" */;
@@ -466,6 +566,9 @@
 				LastUpgradeCheck = 1160;
 				ORGANIZATIONNAME = CATWALK;
 				TargetAttributes = {
+					1D92F0DC26F3985400BBEF17 = {
+						CreatedOnToolsVersion = 11.6;
+					};
 					1D95026F26C9D4C700EC7AB1 = {
 						CreatedOnToolsVersion = 11.6;
 						LastSwiftMigration = 1160;
@@ -497,11 +600,25 @@
 				1D95026F26C9D4C700EC7AB1 /* Catwalk */,
 				1D95027826C9D4C800EC7AB1 /* CatwalkTests */,
 				1DDAA58326C9E6DF00104FBD /* CatwalkExamples */,
+				1D92F0DC26F3985400BBEF17 /* CatwalkExamplesWithScene */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		1D92F0DB26F3985400BBEF17 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D1557CE27065CEA00F80484 /* GreycliffCF-Bold.ttf in Resources */,
+				1D1557CC27065CEA00F80484 /* Greycliff-CF-Regular.ttf in Resources */,
+				1D92F0EC26F3985B00BBEF17 /* LaunchScreen.storyboard in Resources */,
+				1D1557CB27065CEA00F80484 /* Greycliff-CF-RegularOblique.ttf in Resources */,
+				1D92F0E926F3985B00BBEF17 /* Assets.xcassets in Resources */,
+				1D1557CD27065CEA00F80484 /* Greycliff-CF-Light.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1D95026E26C9D4C700EC7AB1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -537,6 +654,16 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		1D92F0D926F3985400BBEF17 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D92F0E426F3985400BBEF17 /* ViewController.swift in Sources */,
+				1D92F0E026F3985400BBEF17 /* AppDelegate.swift in Sources */,
+				1D92F0E226F3985400BBEF17 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1D95026C26C9D4C700EC7AB1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -545,7 +672,9 @@
 				1DDAA5D126C9EF6F00104FBD /* CTWGenieLooksViewModel.swift in Sources */,
 				1DDAA5BD26C9EE9B00104FBD /* CTWSKUAvailability.swift in Sources */,
 				1DDAA5B026C9EDE000104FBD /* UIColorExtensions.swift in Sources */,
+				1D1D72AF26FBB60900C68695 /* CTWGenieShoppingListViewModel.swift in Sources */,
 				1D1CA84126E97DB90086B229 /* CTWReachability.swift in Sources */,
+				1D1557C52706209F00F80484 /* CTWClothingItemTableViewCell.swift in Sources */,
 				1D72477C26D5AC4E003B9769 /* CTWAttendanceReviewDelegate.swift in Sources */,
 				1D72477A26D5AC36003B9769 /* CTWChatAttendanceReviewTableViewCell.swift in Sources */,
 				1DDAA5B726C9EE8000104FBD /* CTWClothing.swift in Sources */,
@@ -554,7 +683,6 @@
 				1DDAA5DB26C9EFCC00104FBD /* CTWChatUserMessageTableViewCell.swift in Sources */,
 				1DDAA5B426C9EE6000104FBD /* CTWChatMessage.swift in Sources */,
 				1D0DEAC526CFFE9400ABF47A /* CTWSession.swift in Sources */,
-				1D0DEABE26CDC77E00ABF47A /* CTWGenieShoppingListViewModel.swift in Sources */,
 				1DDAA59D26C9E98100104FBD /* CTWGenieViewController.swift in Sources */,
 				1DDAA59F26C9ECE200104FBD /* CTWGenieChatViewController.swift in Sources */,
 				1DDAA5B926C9EE8900104FBD /* CTWDefaultResponse.swift in Sources */,
@@ -569,6 +697,7 @@
 				1DDAA5D726C9EFBB00104FBD /* CTWLookContainerView.swift in Sources */,
 				1DDAA5AB26C9ED3400104FBD /* CTWOfflineStateViewController.swift in Sources */,
 				1DDAA5C026C9EEE100104FBD /* CTWNetworkManager.swift in Sources */,
+				1D788225270525250064D93B /* CTWGenieItemListingViewController.swift in Sources */,
 				1DDAA5D326C9EF7900104FBD /* CTWShoppingClothingViewModel.swift in Sources */,
 				1D09B82C26CC87FC0040AB0D /* ArrayExtensions.swift in Sources */,
 				1DDAA5DF26C9EFDC00104FBD /* CTWShoppingClothingItemTableViewCell.swift in Sources */,
@@ -600,6 +729,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		1D92F0F426F398DD00BBEF17 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1D95026F26C9D4C700EC7AB1 /* Catwalk */;
+			targetProxy = 1D92F0F326F398DD00BBEF17 /* PBXContainerItemProxy */;
+		};
 		1D95027C26C9D4C800EC7AB1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 1D95026F26C9D4C700EC7AB1 /* Catwalk */;
@@ -613,6 +747,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		1D92F0EA26F3985B00BBEF17 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1D92F0EB26F3985B00BBEF17 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
 		1DDAA59126C9E6E300104FBD /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -624,6 +766,42 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		1D92F0EE26F3985B00BBEF17 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M3754J9UWF;
+				INFOPLIST_FILE = CatwalkExamplesWithScene/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mycatwalk.CatwalkExamplesWithScene;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1D92F0EF26F3985B00BBEF17 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M3754J9UWF;
+				INFOPLIST_FILE = CatwalkExamplesWithScene/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mycatwalk.CatwalkExamplesWithScene;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		1D95028226C9D4C800EC7AB1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -880,6 +1058,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1D92F0F026F3985B00BBEF17 /* Build configuration list for PBXNativeTarget "CatwalkExamplesWithScene" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D92F0EE26F3985B00BBEF17 /* Debug */,
+				1D92F0EF26F3985B00BBEF17 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		1D95026A26C9D4C700EC7AB1 /* Build configuration list for PBXProject "Catwalk" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
