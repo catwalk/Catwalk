@@ -233,12 +233,29 @@ class CTWGenieChatViewController: CTWGenieContainerViewController {
             CTWNetworkManager.shared.fetchSimilars(for: focusedSKU) { (result: Result<[String], CTWNetworkManager.APIServiceError>) in
                 switch result {
                     case .success(let similars):
-                        DispatchQueue.main.async {
-                            loader?.dismiss(animated: true) {
-                                self.assistantViewController?.delegate?.didReturnMultipleItems(skus: similars)
-                                self.assistantViewController?.navigationController?.dismiss(animated: true)
+                        CTWNetworkManager.shared.fetchProductsInfo(skus: similars) { (infoResult) in
+                            switch infoResult {
+                                case .success(let items):
+                                    DispatchQueue.main.async {
+                                        loader?.dismiss(animated: true) {
+                                            if items.count > 0 {
+                                                let genieNavigationController = self.navigationController as? CTWAssistantNavigationController
+                                                genieNavigationController?.showListOfItems(products: items)
+                                            } else {
+                                                CTWAppUtils.showAlert(title: Customization.defaultErrorTitle, message: Customization.defaultErrorMessage, host: self)
+                                            }
+                                        }
+                                    }
+                                case .failure(let error):
+                                    print(error.localizedDescription)
+                                    DispatchQueue.main.async { [weak self] in
+                                        loader?.dismiss(animated: true) {
+                                            CTWAppUtils.showAlert(title: Customization.defaultErrorTitle, message: Customization.defaultErrorMessage, host: self)
+                                        }
+                                    }
                             }
                         }
+                        
                     case .failure(let error):
                         print(error.localizedDescription)
                         DispatchQueue.main.async { [weak self] in
@@ -252,10 +269,26 @@ class CTWGenieChatViewController: CTWGenieContainerViewController {
             CTWNetworkManager.shared.fetchTrendingSKUs { (result: Result<[String], CTWNetworkManager.APIServiceError>) in
                 switch result {
                     case .success(let trendingSKUs):
-                        DispatchQueue.main.async {
-                            loader?.dismiss(animated: true) {
-                                self.assistantViewController?.delegate?.didReturnMultipleItems(skus: trendingSKUs)
-                                self.assistantViewController?.navigationController?.dismiss(animated: true)
+                        CTWNetworkManager.shared.fetchProductsInfo(skus: trendingSKUs) { (infoResult) in
+                            switch infoResult {
+                                case .success(let items):
+                                    DispatchQueue.main.async {
+                                        loader?.dismiss(animated: true) {
+                                            if items.count > 0 {
+                                                let genieNavigationController = self.navigationController as? CTWAssistantNavigationController
+                                                genieNavigationController?.showListOfItems(products: items)
+                                            } else {
+                                                CTWAppUtils.showAlert(title: Customization.defaultErrorTitle, message: Customization.defaultErrorMessage, host: self)
+                                            }
+                                        }
+                                    }
+                                case .failure(let error):
+                                    print(error.localizedDescription)
+                                    DispatchQueue.main.async { [weak self] in
+                                        loader?.dismiss(animated: true) {
+                                            CTWAppUtils.showAlert(title: Customization.defaultErrorTitle, message: Customization.defaultErrorMessage, host: self)
+                                        }
+                                    }
                             }
                         }
                     case .failure(let error):
@@ -281,17 +314,37 @@ class CTWGenieChatViewController: CTWGenieContainerViewController {
             CTWNetworkManager.shared.fetchAvailableColors(for: focusedSKU) { (result: Result<[String], CTWNetworkManager.APIServiceError>) in
                 switch result {
                     case .success(let colorSKUs):
-                        DispatchQueue.main.async { [weak self] in
-                            loader?.dismiss(animated: true) {
-                                if(colorSKUs.count > 0) {
-                                    self?.assistantViewController?.delegate?.didReturnMultipleItems(skus: colorSKUs)
-                                    self?.assistantViewController?.navigationController?.dismiss(animated: true)
-                                } else {
+                        if colorSKUs.count > 0 {
+                            CTWNetworkManager.shared.fetchProductsInfo(skus: colorSKUs) { (infoResult) in
+                                switch infoResult {
+                                    case .success(let items):
+                                        DispatchQueue.main.async {
+                                            loader?.dismiss(animated: true) {
+                                                if items.count > 0 {
+                                                    let genieNavigationController = self.navigationController as? CTWAssistantNavigationController
+                                                    genieNavigationController?.showListOfItems(products: items)
+                                                } else {
+                                                    CTWAppUtils.showAlert(title: Customization.defaultErrorTitle, message: Customization.noColorsErrorMessage, host: self)
+                                                }
+                                            }
+                                        }
+                                    case .failure(let error):
+                                        print(error.localizedDescription)
+                                        DispatchQueue.main.async { [weak self] in
+                                            loader?.dismiss(animated: true) {
+                                                CTWAppUtils.showAlert(title: Customization.defaultErrorTitle, message: Customization.defaultErrorMessage, host: self)
+                                            }
+                                        }
+                                }
+                            }
+                        } else {
+                            DispatchQueue.main.async { [weak self] in
+                                loader?.dismiss(animated: true) {
                                     CTWAppUtils.showAlert(title: Customization.defaultErrorTitle, message: Customization.noColorsErrorMessage, host: self)
                                 }
-                                
                             }
                         }
+                        
                     case .failure(let error):
                         print(error.localizedDescription)
                         DispatchQueue.main.async { [weak self] in
@@ -350,10 +403,26 @@ class CTWGenieChatViewController: CTWGenieContainerViewController {
         CTWNetworkManager.shared.fetchTrendingSKUs { (result: Result<[String], CTWNetworkManager.APIServiceError>) in
             switch result {
                 case .success(let trendingSKUs):
-                    DispatchQueue.main.async {
-                        loader?.dismiss(animated: true) { [weak self] in
-                            self?.assistantViewController?.delegate?.didReturnMultipleItems(skus: trendingSKUs)
-                            self?.assistantViewController?.navigationController?.dismiss(animated: true)
+                    CTWNetworkManager.shared.fetchProductsInfo(skus: trendingSKUs) { (infoResult) in
+                        switch infoResult {
+                            case .success(let items):
+                                DispatchQueue.main.async {
+                                    loader?.dismiss(animated: true) {
+                                        if items.count > 0 {
+                                            let genieNavigationController = self.navigationController as? CTWAssistantNavigationController
+                                            genieNavigationController?.showListOfItems(products: items)
+                                        } else {
+                                            CTWAppUtils.showAlert(title: Customization.defaultErrorTitle, message: Customization.defaultErrorMessage, host: self)
+                                        }
+                                    }
+                                }
+                            case .failure(let error):
+                                print(error.localizedDescription)
+                                DispatchQueue.main.async { [weak self] in
+                                    loader?.dismiss(animated: true) {
+                                        CTWAppUtils.showAlert(title: Customization.defaultErrorTitle, message: Customization.defaultErrorMessage, host: self)
+                                    }
+                                }
                         }
                     }
                 case .failure(let error):

@@ -18,4 +18,10 @@ class CTWAssistantNavigationController: UINavigationController {
             GenieAPI.sessionId = ""
         }
     }
+    
+    func showListOfItems(products: [CTWProduct]) {
+        let genieItemListingViewController = CTWGenieItemListingViewController()
+        genieItemListingViewController.products = products
+        pushViewController(genieItemListingViewController, animated: true)
+    }
 }
