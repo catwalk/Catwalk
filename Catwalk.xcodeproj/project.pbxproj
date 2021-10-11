@@ -59,7 +59,7 @@
 		1DDAA5B726C9EE8000104FBD /* CTWClothing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDAA5B626C9EE8000104FBD /* CTWClothing.swift */; };
 		1DDAA5B926C9EE8900104FBD /* CTWDefaultResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDAA5B826C9EE8900104FBD /* CTWDefaultResponse.swift */; };
 		1DDAA5BB26C9EE9100104FBD /* CTWLook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDAA5BA26C9EE9100104FBD /* CTWLook.swift */; };
-		1DDAA5BD26C9EE9B00104FBD /* CTWSKUAvailability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDAA5BC26C9EE9B00104FBD /* CTWSKUAvailability.swift */; };
+		1DDAA5BD26C9EE9B00104FBD /* CTWAvailability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDAA5BC26C9EE9B00104FBD /* CTWAvailability.swift */; };
 		1DDAA5C026C9EEE100104FBD /* CTWNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDAA5BF26C9EEE100104FBD /* CTWNetworkManager.swift */; };
 		1DDAA5CC26C9EF3D00104FBD /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDAA5CB26C9EF3D00104FBD /* Config.swift */; };
 		1DDAA5CE26C9EF4700104FBD /* CTWAppUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDAA5CD26C9EF4700104FBD /* CTWAppUtils.swift */; };
@@ -182,7 +182,7 @@
 		1DDAA5B626C9EE8000104FBD /* CTWClothing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTWClothing.swift; sourceTree = "<group>"; };
 		1DDAA5B826C9EE8900104FBD /* CTWDefaultResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTWDefaultResponse.swift; sourceTree = "<group>"; };
 		1DDAA5BA26C9EE9100104FBD /* CTWLook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTWLook.swift; sourceTree = "<group>"; };
-		1DDAA5BC26C9EE9B00104FBD /* CTWSKUAvailability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTWSKUAvailability.swift; sourceTree = "<group>"; };
+		1DDAA5BC26C9EE9B00104FBD /* CTWAvailability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTWAvailability.swift; sourceTree = "<group>"; };
 		1DDAA5BF26C9EEE100104FBD /* CTWNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTWNetworkManager.swift; sourceTree = "<group>"; };
 		1DDAA5C226C9EF1D00104FBD /* Greycliff-CF-RegularOblique.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Greycliff-CF-RegularOblique.ttf"; sourceTree = "<group>"; };
 		1DDAA5C326C9EF1D00104FBD /* Greycliff-CF-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Greycliff-CF-Regular.ttf"; sourceTree = "<group>"; };
@@ -390,7 +390,7 @@
 				1DDAA5B626C9EE8000104FBD /* CTWClothing.swift */,
 				1DDAA5B826C9EE8900104FBD /* CTWDefaultResponse.swift */,
 				1DDAA5BA26C9EE9100104FBD /* CTWLook.swift */,
-				1DDAA5BC26C9EE9B00104FBD /* CTWSKUAvailability.swift */,
+				1DDAA5BC26C9EE9B00104FBD /* CTWAvailability.swift */,
 				1D0DEAC426CFFE9400ABF47A /* CTWSession.swift */,
 			);
 			path = Models;
@@ -670,7 +670,7 @@
 			files = (
 				1DDAA5A126C9ECF000104FBD /* CTWGenieContainerViewController.swift in Sources */,
 				1DDAA5D126C9EF6F00104FBD /* CTWGenieLooksViewModel.swift in Sources */,
-				1DDAA5BD26C9EE9B00104FBD /* CTWSKUAvailability.swift in Sources */,
+				1DDAA5BD26C9EE9B00104FBD /* CTWAvailability.swift in Sources */,
 				1DDAA5B026C9EDE000104FBD /* UIColorExtensions.swift in Sources */,
 				1D1D72AF26FBB60900C68695 /* CTWGenieShoppingListViewModel.swift in Sources */,
 				1D1CA84126E97DB90086B229 /* CTWReachability.swift in Sources */,

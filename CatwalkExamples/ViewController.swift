@@ -56,11 +56,16 @@ class ViewController: UIViewController {
         }
         
         @objc func openFocusedGenieState() {
-            let context = CTWAssistantContext()
-            context.delegate = self
-            context.focusedSKU = "YOUR_SKU"
-            context.hostViewController = self
-            context.presentAssistant()
+            let sku = "YOUR_SKU"
+            CTWAssistantContext.shouldShowItem(sku: sku) { showItem in
+                if showItem {
+                    let context = CTWAssistantContext()
+                    context.delegate = self
+                    context.focusedSKU = sku
+                    context.hostViewController = self
+                    context.presentAssistant()
+                }
+            }
         }
         
         @objc func openOfflineGenieState() {
@@ -74,9 +79,6 @@ extension ViewController: CTWAssistantDelegate {
     
     func didReturnShoppingItems(skus: [String]) {
         print("PARTNER: Shopping Items: \(skus)")
-    }
-    func didReturnMultipleItems(skus: [String]) {
-        print("PARTNER: Multiple Items: \(skus)")
     }
     
     func didReturnSingleItem(sku: String) {
