@@ -148,7 +148,7 @@ class CTWGenieViewController: CTWGenieContainerViewController {
     func isFocusedSKUAvailable(sku: String?, checker: @escaping (Bool) -> Void) {
         guard let focusedSKU = focusedSKU else { return checker(false) }
     
-        CTWNetworkManager.shared.checkIfSKUAvailable(sku: focusedSKU) { (result: Result<CTWSKUAvailability, CTWNetworkManager.APIServiceError>) in
+        CTWNetworkManager.shared.checkItemAvailability(sku: focusedSKU) { (result: Result<CTWAvailability, CTWNetworkManager.APIServiceError>) in
             switch result {
                 case .success(let availability):
                     self.closeLoader {

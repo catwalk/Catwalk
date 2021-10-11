@@ -6,7 +6,7 @@
 //  Copyright © 2021 CATWALK. All rights reserved.
 //
 
-struct CTWSKUAvailability: Decodable {
+struct CTWAvailability: Decodable {
     var code: Int?
     var message: String?
     var available: Bool?

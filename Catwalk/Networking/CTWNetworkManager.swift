@@ -49,8 +49,8 @@ class CTWNetworkManager {
         fetchResources(urlRequest: request, completion: result)
     }
     
-    public func checkIfSKUAvailable(sku: String, result: @escaping (Result<CTWSKUAvailability, APIServiceError>) -> Void) {
-        let url = URL(string: "\(GenieAPI.CTWLK_API_ROOT)/sku/availability")!
+    public func checkItemAvailability(sku: String, showCheck: Bool = false, result: @escaping (Result<CTWAvailability, APIServiceError>) -> Void) {
+        let url = URL(string: "\(GenieAPI.CTWLK_API_ROOT)/sku/availability\(showCheck ? "?showCheck=true" : "")")!
         let request = createRequest(url: url, sku: sku)
         fetchResources(urlRequest: request, completion: result)
     }

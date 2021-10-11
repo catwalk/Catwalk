@@ -28,4 +28,15 @@ public class CTWAssistantContext {
         genieViewController.modalPresentationStyle = .overCurrentContext
         hostViewController?.present(genieViewController, animated: true)
     }
+    
+    public static func shouldShowItem(sku: String, completion: @escaping (Bool) -> Void) {
+        CTWNetworkManager.shared.checkItemAvailability(sku: sku, showCheck: true) { (result: Result<CTWAvailability, CTWNetworkManager.APIServiceError>) in
+            switch result {
+                case .success(let availability):
+                    completion(availability.available ?? false)
+                case .failure( _):
+                    completion(false)
+            }
+        }
+    }
 }
