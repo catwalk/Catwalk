@@ -36,6 +36,12 @@ struct CTWGenieLooksViewModel {
         look?.likedLook = true
     }
     
+    func dislikeCurrentLook() {
+        guard let currentLookIndex = currentLookIndex else { return }
+        let look = looks[safe: currentLookIndex]
+        look?.likedLook = false
+    }
+    
     func isCurrentLookLiked() -> Bool {
         guard let currentLookIndex = currentLookIndex else { return false }
         let look = looks[safe: currentLookIndex]
