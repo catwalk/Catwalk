@@ -233,12 +233,15 @@ class CTWGenieViewController: CTWGenieContainerViewController {
         CTWNetworkManager.shared.fetchLooks(for: focusedSKU) { (result: Result<[CTWLook], CTWNetworkManager.APIServiceError>) in
             switch result {
                 case .success(let looks):
+                    let filteredLooks = looks.filter{ $0.items.count > 0 }
                     DispatchQueue.main.async { [weak self] in
                         loader.dismiss(animated: true) {
-                            if(looks.count > 0){
+                            if(filteredLooks.count > 0){
                                 let looksViewController = CTWGenieLooksViewController()
-                                looksViewController.genieLooksViewModel = CTWGenieLooksViewModel(looks: looks)
+                                looksViewController.genieLooksViewModel = CTWGenieLooksViewModel(looks: filteredLooks)
                                 self?.navigationController?.pushViewController(looksViewController, animated: true)
+                            } else {
+                                CTWAppUtils.showAlert(title: Customization.defaultErrorTitle, message: Customization.noLooksErrorMessage, host: self)
                             }
                         }
                     }
@@ -271,7 +274,7 @@ class CTWGenieViewController: CTWGenieContainerViewController {
                                             let genieNavigationController = self.navigationController as? CTWAssistantNavigationController
                                             genieNavigationController?.showListOfItems(products: items)
                                         } else {
-                                            CTWAppUtils.showAlert(title: Customization.defaultErrorTitle, message: Customization.defaultErrorMessage, host: self)
+                                            CTWAppUtils.showAlert(title: Customization.defaultErrorTitle, message: Customization.noTrendingItemsErrorMessage, host: self)
                                         }
                                     }
                                 }
@@ -317,7 +320,7 @@ class CTWGenieViewController: CTWGenieContainerViewController {
                                             let genieNavigationController = self.navigationController as? CTWAssistantNavigationController
                                             genieNavigationController?.showListOfItems(products: items)
                                         } else {
-                                            CTWAppUtils.showAlert(title: Customization.defaultErrorTitle, message: Customization.defaultErrorMessage, host: self)
+                                            CTWAppUtils.showAlert(title: Customization.defaultErrorTitle, message: Customization.noSimilarsErrorMessage, host: self)
                                         }
                                     }
                                 }
@@ -405,14 +408,12 @@ class CTWGenieViewController: CTWGenieContainerViewController {
             switch result {
                 case .success(let product):
                     DispatchQueue.main.async { [weak self] in
-                        if let sizes = product.sizes, sizes.count > 0 {
-                            loader.dismiss(animated: true) {
+                        loader.dismiss(animated: true) {
+                            if let sizes = product.sizes, sizes.count > 0 {
                                 let genieShoppingListViewController = CTWGenieShoppingListViewController()
                                 genieShoppingListViewController.genieShoppingListViewModel = CTWGenieShoppingListViewModel(products: sizes.map({ CTWProduct(headline: product.headline, productId: product.productId, image: product.image, price: product.price, sizes: [$0]) }))
                                 self?.navigationController?.pushViewController(genieShoppingListViewController, animated: true)
-                            }
-                        } else {
-                            loader.dismiss(animated: true) {
+                            } else {
                                 CTWAppUtils.showAlert(title: Customization.defaultErrorTitle, message: Customization.noSizesErrorMessage, host: self)
                             }
                         }

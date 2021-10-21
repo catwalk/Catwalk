@@ -128,25 +128,30 @@ class CTWGenieLooksViewController: CTWGenieContainerViewController {
     }
     
     @objc func likeLook() {
-        if let productIds = genieLooksViewModel?.currentLook?.items.map({ $0.product?.productId ?? "" }).filter({ $0 != "" }) {
-            genieLooksViewModel?.likeCurrentLook()
+        if let likedLook = genieLooksViewModel?.currentLook?.likedLook, likedLook == true {
+            genieLooksViewModel?.dislikeCurrentLook()
             updateLikeButtonColor()
-            let loader = CTWAppUtils.createLoader(title: "Carregando")
-            self.present(loader, animated: true)
-            
-            CTWNetworkManager.shared.likeLook(with: productIds) { (result: Result<CTWDefaultResponse, CTWNetworkManager.APIServiceError>) in
-                switch result {
-                case .success( _):
-                        DispatchQueue.main.async {
-                            loader.dismiss(animated: true)
-                        }
-                    case .failure(let error):
-                        print(error.localizedDescription)
-                        DispatchQueue.main.async { [weak self] in
-                            loader.dismiss(animated: true) {
-                                CTWAppUtils.showAlert(title: Customization.defaultErrorTitle, message: Customization.defaultErrorMessage, host: self)
+        } else {
+            if let productIds = genieLooksViewModel?.currentLook?.items.map({ $0.product?.productId ?? "" }).filter({ $0 != "" }) {
+                genieLooksViewModel?.likeCurrentLook()
+                updateLikeButtonColor()
+                let loader = CTWAppUtils.createLoader(title: "Carregando")
+                self.present(loader, animated: true)
+                
+                CTWNetworkManager.shared.likeLook(with: productIds) { (result: Result<CTWDefaultResponse, CTWNetworkManager.APIServiceError>) in
+                    switch result {
+                    case .success( _):
+                            DispatchQueue.main.async {
+                                loader.dismiss(animated: true)
                             }
-                        }
+                        case .failure(let error):
+                            print(error.localizedDescription)
+                            DispatchQueue.main.async { [weak self] in
+                                loader.dismiss(animated: true) {
+                                    CTWAppUtils.showAlert(title: Customization.defaultErrorTitle, message: Customization.defaultErrorMessage, host: self)
+                                }
+                            }
+                    }
                 }
             }
         }

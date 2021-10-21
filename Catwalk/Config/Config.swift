@@ -17,10 +17,12 @@ public class GenieAPI {
 
 public class Customization {
     static var defaultErrorTitle: String = "Assistente diz"
+    static var noTrendingItemsErrorMessage: String = "Oops... não encontrei peças!"
+    static var noSimilarsErrorMessage: String = "Oops... não encontrei peças parecidas!"
     static var noLooksErrorMessage: String = "Oops... não encontrei combinações!"
     static var defaultErrorMessage: String = "Parece haver um erro na sua requisição. Por favor, tente novamente mais tarde."
     static var noSizesErrorMessage: String = "Oops... não encontrei mais tamanhos para esta peça!"
-    static var noColorsErrorMessage: String = "Oops... não encontrei outras cores esta peça!"
+    static var noColorsErrorMessage: String = "Oops... não encontrei outras cores para esta peça!"
     
     public static var boldFontName: String = "Greycliff-CF-Bold"
     public static var lightFontName: String = "Greycliff-CF-Light"

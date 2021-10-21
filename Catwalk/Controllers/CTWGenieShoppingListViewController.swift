@@ -165,6 +165,7 @@ extension CTWGenieShoppingListViewController: CTWShoppingClothingItemTableViewCe
         genieShoppingListViewModel?.removeProductByProductId(productId)
         if let totalProducts = genieShoppingListViewModel?.totalProducts, totalProducts > 0 {
             clothesTableView.reloadData()
+            lbTotalPrice.text = genieShoppingListViewModel?.totalPrice
         } else {
             navigationController?.popViewController(animated: true)
         }
