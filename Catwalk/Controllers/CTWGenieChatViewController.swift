@@ -473,7 +473,12 @@ extension CTWGenieChatViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cellSender = messages[indexPath.row].sender else { return UITableViewCell()}
+        guard let cellSender = messages[indexPath.row].sender else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: attendanceReviewCell, for: indexPath) as! CTWChatAttendanceReviewTableViewCell
+            cell.lbMessage.text = messages[indexPath.row].text
+            cell.selectionStyle = .none
+            return cell
+        }
         
         switch cellSender {
         case .User:
