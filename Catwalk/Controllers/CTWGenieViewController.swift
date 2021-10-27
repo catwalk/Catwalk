@@ -233,7 +233,7 @@ class CTWGenieViewController: CTWGenieContainerViewController {
         CTWNetworkManager.shared.fetchLooks(for: focusedSKU) { (result: Result<[CTWLook], CTWNetworkManager.APIServiceError>) in
             switch result {
                 case .success(let looks):
-                    let filteredLooks = looks.filter{ $0.items.count > 0 }
+                    let filteredLooks = looks
                     DispatchQueue.main.async { [weak self] in
                         loader.dismiss(animated: true) {
                             if(filteredLooks.count > 0){
